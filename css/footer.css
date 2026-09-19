@@ -1,0 +1,29 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 70px 25px;
+
+  text-align: center;
+
+  background: var(--deep-burgundy);
+
+  color: white;
+}
+
+.footer-names {
+  font-family: "Great Vibes", cursive;
+  font-size: 65px;
+  color: #f5d88f;
+}
+
+.footer-text {
+  margin-top: 15px;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  opacity: .65;
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#2a4060"/>
+  <circle cx="520" cy="340" r="110" fill="#1e2d3d"/>
+  <ellipse cx="520" cy="650" rx="160" ry="200" fill="#1e2d3d"/>
+  <circle cx="680" cy="340" r="110" fill="#1e2d3d"/>
+  <ellipse cx="680" cy="650" rx="160" ry="200" fill="#1e2d3d"/>
+  <text x="600" y="760" text-anchor="middle" font-family="serif" font-size="24" fill="#e8c4b4" letter-spacing="6">AANYA &amp; ROHAN</text>
+</svg>

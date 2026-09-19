@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="600" viewBox="0 0 460 600">
+  <rect width="460" height="600" fill="#d4cac0"/>
+  <circle cx="230" cy="200" r="80" fill="#b8afa6"/>
+  <ellipse cx="230" cy="480" rx="130" ry="160" fill="#b8afa6"/>
+  <text x="230" y="570" text-anchor="middle" font-family="serif" font-size="18" fill="#8a8078" letter-spacing="3">AANYA</text>
+</svg>

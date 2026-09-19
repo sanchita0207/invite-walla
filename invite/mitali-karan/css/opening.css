@@ -1,0 +1,123 @@
+/* =========================================================
+   OPENING SCREEN
+========================================================= */
+
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #7c2938 0%,
+      var(--burgundy) 45%,
+      var(--deep-burgundy) 100%
+    );
+
+  color: white;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.opening.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-content {
+  text-align: center;
+  padding: 30px;
+  animation: openingReveal 1.5s ease;
+}
+
+.opening-small {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  opacity: .8;
+  margin-bottom: 30px;
+}
+
+.opening-names {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(60px, 18vw, 120px);
+  line-height: .9;
+  color: #f1d28c;
+}
+
+.opening-and {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  margin: 18px 0;
+  color: #fff5df;
+}
+
+.opening-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-top: 35px;
+}
+
+.open-button {
+  margin-top: 45px;
+  padding: 14px 30px;
+
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50px;
+
+  background: transparent;
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  transition: all .3s ease;
+}
+
+.open-button:hover {
+  background: #f1d28c;
+  color: var(--deep-burgundy);
+  border-color: #f1d28c;
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.music-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 100;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(185,149,82,.6);
+
+  background: rgba(255,250,243,.9);
+
+  color: var(--burgundy);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}

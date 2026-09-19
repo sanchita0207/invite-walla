@@ -1,0 +1,46 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 70px 25px;
+
+  text-align: center;
+
+  background: var(--deep-navy);
+
+  color: white;
+}
+
+.footer-names {
+  font-family: "Great Vibes", cursive;
+  font-size: 65px;
+  color: var(--blush);
+}
+
+.footer-text {
+  margin-top: 15px;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  opacity: .55;
+}
+
+.footer-brand {
+  margin-top: 30px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: .4;
+}
+
+.footer-brand a {
+  color: var(--blush);
+  opacity: .7;
+  text-decoration: none;
+}
+
+.footer-brand a:hover {
+  opacity: 1;
+}

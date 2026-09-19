@@ -1,0 +1,54 @@
+/* =========================================================
+   COUPLE
+========================================================= */
+
+.couple {
+  background: var(--soft-cream);
+}
+
+.couple-grid {
+  margin-top: 60px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.person {
+  text-align: center;
+}
+
+.person-photo {
+  width: 230px;
+  height: 300px;
+
+  margin: auto;
+
+  object-fit: cover;
+
+  border-radius: 120px 120px 10px 10px;
+
+  border: 1px solid rgba(185,149,82,.5);
+
+  padding: 6px;
+  background: #fff;
+}
+
+.person-name {
+  margin-top: 25px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+
+  color: var(--burgundy);
+}
+
+.person-role {
+  margin-top: 8px;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: var(--gold);
+}
