@@ -1,0 +1,558 @@
+/* =========================================================
+   INVITEWALLA — Pricing / Products Section
+   css/pricing.css
+   =========================================================
+   Stationery-inspired layout. No SaaS cards.
+   Cream paper · muted gold borders · elegant typography
+========================================================= */
+
+
+/* =========================================================
+   SECTION WRAPPER
+========================================================= */
+
+.iw-pricing {
+  padding: 96px 0 80px;
+  background: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle paper texture hint */
+.iw-pricing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(181,138,58,.04) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 100%, rgba(217,169,155,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.iw-pricing .iw-section-container {
+  text-align: center;
+}
+
+.iw-pricing-sub {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(17px, 2.8vw, 22px);
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 14px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* Gold divider after heading */
+.iw-pricing-divider {
+  display: flex;
+  justify-content: center;
+  margin: 36px auto 52px;
+}
+.iw-pricing-divider svg { opacity: .65; }
+
+
+/* =========================================================
+   STATIONERY GRID
+========================================================= */
+
+.iw-pricing-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STATIONERY CARD
+========================================================= */
+
+.iw-price-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 40px 32px 36px;
+  text-align: center;
+
+  /* Paper shadow */
+  box-shadow:
+    0 2px 8px rgba(58,41,32,.06),
+    0 8px 32px rgba(58,41,32,.07),
+    inset 0 1px 0 rgba(255,255,255,.7);
+
+  /* Entrance animation state */
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform .7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow .3s ease;
+}
+
+.iw-price-card.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.iw-price-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 4px 16px rgba(58,41,32,.08),
+    0 16px 48px rgba(58,41,32,.11),
+    inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+/* Featured (complete) card gets slightly elevated treatment */
+.iw-price-card--featured {
+  background: #FDF8F0;
+  border-color: rgba(181,138,58,.45);
+  box-shadow:
+    0 2px 8px rgba(181,138,58,.08),
+    0 12px 40px rgba(181,138,58,.12),
+    inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+/* Outer thin gold frame on featured */
+.iw-price-card--featured::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(181,138,58,.2);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* ── Corner ornaments ── */
+.iw-price-card-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+.iw-price-card-corner--tl { top: 10px;  left: 10px;  }
+.iw-price-card-corner--tr { top: 10px;  right: 10px; transform: scaleX(-1); }
+.iw-price-card-corner--bl { bottom: 10px; left: 10px;  transform: scaleY(-1); }
+.iw-price-card-corner--br { bottom: 10px; right: 10px; transform: scale(-1); }
+
+
+/* ── Save badge (launch price) ── */
+.iw-price-save {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(181,138,58,.35);
+}
+
+/* ── Card header ── */
+.iw-price-eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.iw-price-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.iw-price-tagline {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* Thin gold rule */
+.iw-price-rule {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 24px;
+  opacity: .7;
+}
+
+/* ── Visual mockup area ── */
+.iw-price-visual {
+  margin: 0 auto 28px;
+}
+
+/* Web invitation mini-preview */
+.iw-price-web-preview {
+  width: 180px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(58,41,32,.1);
+}
+.iw-price-web-preview-bar {
+  background: #f0e4d0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.iw-price-web-preview-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.iw-price-web-preview-url {
+  flex: 1;
+  background: rgba(255,255,255,.6);
+  border-radius: 3px;
+  height: 10px;
+  margin-left: 4px;
+}
+.iw-price-web-preview-body {
+  background: var(--ivory);
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.iw-price-web-preview-title-bar {
+  width: 80px; height: 8px;
+  background: linear-gradient(to right, var(--gold-pale), var(--parchment));
+  border-radius: 4px;
+}
+.iw-price-web-preview-line {
+  height: 5px;
+  background: var(--border);
+  border-radius: 4px;
+  opacity: .6;
+}
+.iw-price-web-preview-line--sm { width: 60px; }
+.iw-price-web-preview-line--md { width: 90px; }
+.iw-price-web-preview-name {
+  font-family: "Great Vibes", cursive;
+  font-size: 18px;
+  color: var(--gold);
+  line-height: 1;
+  margin: 4px 0;
+}
+.iw-price-web-preview-date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  opacity: .6;
+}
+
+/* Phone / video mockup */
+.iw-price-phone {
+  width: 90px;
+  margin: 0 auto;
+  position: relative;
+}
+.iw-price-phone-frame {
+  width: 90px;
+  height: 160px;
+  background: var(--dark-bg);
+  border-radius: 14px;
+  border: 2px solid rgba(181,138,58,.35);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.25),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.iw-price-phone-notch {
+  position: absolute;
+  top: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 22px; height: 4px;
+  background: rgba(255,255,255,.12);
+  border-radius: 2px;
+  z-index: 2;
+}
+.iw-price-phone-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 8px;
+  background: linear-gradient(160deg, #2C1810 0%, #1a0e08 100%);
+}
+.iw-price-phone-names {
+  font-family: "Great Vibes", cursive;
+  font-size: 14px;
+  color: var(--gold-light);
+  line-height: 1;
+  text-align: center;
+}
+.iw-price-phone-and {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 8px;
+  color: rgba(212,168,75,.55);
+}
+.iw-price-phone-date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5.5px;
+  letter-spacing: 1.5px;
+  color: rgba(251,245,236,.35);
+  margin-top: 2px;
+}
+.iw-price-phone-music {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 14px; height: 14px;
+  background: rgba(181,138,58,.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iw-price-phone-music-icon {
+  font-size: 7px;
+  color: var(--gold-light);
+  line-height: 1;
+}
+/* play button overlay */
+.iw-price-phone-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.18);
+}
+.iw-price-phone-play-btn {
+  width: 22px; height: 22px;
+  background: rgba(181,138,58,.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iw-price-phone-play-btn svg { margin-left: 2px; }
+
+/* Combined (web + video) visual */
+.iw-price-combo-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+.iw-price-combo-visual .iw-price-web-preview {
+  width: 160px;
+  flex-shrink: 0;
+}
+.iw-price-combo-visual .iw-price-phone {
+  margin: 0;
+}
+
+/* Connecting gold line between web & video */
+.iw-price-combo-line {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* ── Features list ── */
+.iw-price-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 28px;
+  text-align: left;
+}
+.iw-price-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.iw-price-feature-check {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.iw-price-feature-check svg {
+  display: block;
+}
+
+/* ── Price display ── */
+.iw-price-amount-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.iw-price-currency {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+}
+.iw-price-amount {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 8vw, 54px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.iw-price-launch {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .65;
+  margin-bottom: 24px;
+}
+
+/* ── CTA button ── */
+.iw-price-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 24px;
+  border-radius: 3px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background .22s ease,
+    color .22s ease,
+    box-shadow .22s ease,
+    transform .14s ease;
+}
+.iw-price-cta:hover {
+  background: var(--gold);
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(181,138,58,.32);
+}
+.iw-price-cta:active { transform: scale(.98); }
+
+/* Featured card gets filled CTA */
+.iw-price-card--featured .iw-price-cta {
+  background: var(--gold);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(181,138,58,.28);
+}
+.iw-price-card--featured .iw-price-cta:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 8px 28px rgba(181,138,58,.38);
+}
+
+/* WhatsApp icon inside CTA — keep it small and on-brand */
+.iw-price-wa-icon {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+/* ── Type label below card (Product type) ── */
+.iw-price-type {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--border);
+}
+
+
+/* =========================================================
+   DESKTOP — side-by-side 3-column layout
+========================================================= */
+
+@media (min-width: 900px) {
+  .iw-pricing-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .iw-price-card {
+    max-width: none;
+    flex: 1;
+    max-width: 340px;
+  }
+
+  /* Featured card slightly taller feel */
+  .iw-price-card--featured {
+    padding-top: 52px;
+    padding-bottom: 48px;
+    margin-top: -8px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .iw-pricing-grid { gap: 32px; }
+  .iw-price-card { max-width: 360px; }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .iw-price-card,
+  .iw-price-cta {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -110,6 +110,21 @@ button, input, select, textarea { font: inherit; }
 .iw-section-sub--light { color: rgba(251,245,236,.62); }
 
 
+/* ── SCREEN READER ONLY ─────────────────────────────────── */
+
+.iw-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
 /* ── BUTTONS ────────────────────────────────────────────── */
 
 .iw-btn {
@@ -165,6 +180,37 @@ button, input, select, textarea { font: inherit; }
 .iw-btn-whatsapp:hover {
   background: #1ebe5d;
   box-shadow: 0 6px 20px rgba(37,211,102,.28);
+}
+
+/* Brand-styled WhatsApp button (uses InviteWalla palette) */
+.iw-btn-wa-brand {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+  width: 100%;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(181,138,58,.25);
+}
+.iw-btn-wa-brand:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 8px 28px rgba(181,138,58,.38);
+}
+
+/* "or" separator in WA panel */
+.iw-wa-or {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: var(--border);
+  letter-spacing: .5px;
+  margin: 2px 0;
+}
+
+/* Secondary "see an example" link in WA panel */
+.iw-wa-example-link {
+  width: 100%;
+  justify-content: center;
 }
 
 .iw-btn-submit {
@@ -1450,6 +1496,16 @@ button, input, select, textarea { font: inherit; }
   margin-inline: auto;
 }
 
+/* When form is disabled, center the WA panel */
+.iw-enquire-layout--wa-only {
+  display: flex;
+  justify-content: center;
+  max-width: 440px;
+}
+.iw-enquire-layout--wa-only .iw-wa-panel {
+  width: 100%;
+}
+
 /* Form */
 .iw-enquiry-form { display: flex; flex-direction: column; gap: 18px; }
 .iw-form-row     { display: flex; flex-direction: column; gap: 18px; }
@@ -1702,6 +1758,7 @@ button, input, select, textarea { font: inherit; }
   .iw-hero-inner   { gap: 48px; }
 
   .iw-enquire-layout { grid-template-columns: 1fr 320px; }
+  .iw-enquire-layout--wa-only { grid-template-columns: 1fr; }
 
   .iw-story-cards { max-width: 580px; height: 270px; }
   .iw-story-card  { width: 210px; }
@@ -1723,9 +1780,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* ── REDUCED MOTION ─────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }

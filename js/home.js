@@ -367,7 +367,7 @@
       const message  = data.get("message")  || "";
 
       const waText = encodeURIComponent(
-        `Hi, I'd like to create a digital invitation with InviteWalla.\n\nName: ${name}\nOccasion: ${occasion}${message ? "\nDetails: " + message : ""}`
+        `Hi InviteWalla, I'd like to create an invitation.\n\nName: ${name}\nOccasion: ${occasion}${message ? "\nDetails: " + message : ""}`
       );
 
       const waNumber = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.whatsappNumber)
@@ -405,8 +405,25 @@
   if (typeof SITE_CONFIG !== "undefined") {
 
     if (SITE_CONFIG.whatsappNumber) {
-      const waHref = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=Hi%2C%20I%27d%20like%20to%20create%20a%20digital%20invitation%20with%20InviteWalla.`;
-      document.querySelectorAll("[data-wa-link]").forEach(el => { el.href = waHref; });
+      const waNumber = SITE_CONFIG.whatsappNumber;
+
+      // Generic "create an invitation" CTA links
+      const waHrefGeneric = `https://wa.me/${waNumber}?text=Hi%2C%20I%27d%20like%20to%20create%20an%20invitation%20with%20InviteWalla.`;
+      document.querySelectorAll("[data-wa-link]").forEach(el => { el.href = waHrefGeneric; });
+
+      // Pricing card links — use their specific pre-filled messages
+      const pricingMessages = {
+        digital:  `Hi%20InviteWalla%2C%20I%27d%20like%20a%20Digital%20Invitation%20for%20my%20event.`,
+        video:    `Hi%20InviteWalla%2C%20I%27d%20like%20a%20Video%20Invitation%20for%20my%20event.`,
+        complete: `Hi%20InviteWalla%2C%20I%27d%20like%20the%20Complete%20Invitation%20%E2%80%94%20Web%20%2B%20Video.`,
+      };
+
+      const priceCtaEls = document.querySelectorAll("[data-price-wa]");
+      priceCtaEls.forEach((el, i) => {
+        const keys = Object.keys(pricingMessages);
+        const msg  = pricingMessages[keys[i]] || pricingMessages.digital;
+        el.href = `https://wa.me/${waNumber}?text=${msg}`;
+      });
     }
 
     if (SITE_CONFIG.instagramUsername) {
@@ -448,6 +465,33 @@
         card.style.zIndex    = "";
       });
     });
+  }
+
+
+  /* =========================================================
+     PRICING CARDS — staggered entrance via IntersectionObserver
+  ========================================================= */
+
+  if (!prefersReduced) {
+    const pricingCards = document.querySelectorAll(".iw-price-card");
+    if (pricingCards.length) {
+      const cardIo = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const card  = entry.target;
+            const idx   = Array.from(pricingCards).indexOf(card);
+            setTimeout(() => {
+              card.classList.add("visible");
+            }, idx * 120);
+            cardIo.unobserve(card);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+      pricingCards.forEach(card => cardIo.observe(card));
+    }
+  } else {
+    document.querySelectorAll(".iw-price-card").forEach(el => el.classList.add("visible"));
   }
 
 })();
