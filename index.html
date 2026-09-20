@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>InviteWalla — Beautiful Digital Invitations for Every Occasion</title>
-  <meta name="description" content="Create beautiful digital invitations for weddings, birthdays, baby showers, anniversaries, parties and life's special moments." />
+  <meta name="description" content="Beautiful digital invitations for weddings, birthdays, baby showers, anniversaries, parties and life's special moments." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="InviteWalla — Beautiful Digital Invitations for Every Occasion" />
-  <meta property="og:description" content="Create beautiful digital invitations for weddings, birthdays, baby showers, anniversaries, parties and life's special moments." />
+  <meta property="og:description" content="Har khaas mauke ka, khaas bulawa. Premium digital invitations for every celebration." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://invitewalla.com/" />
   <meta property="og:image" content="https://invitewalla.com/images/og-preview.jpg" />
@@ -17,15 +17,14 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="InviteWalla — Beautiful Digital Invitations" />
-  <meta name="twitter:description" content="Beautiful, interactive digital invitations for life's special moments." />
+  <meta name="twitter:description" content="Har khaas mauke ka, khaas bulawa." />
 
-  <!-- Favicon placeholder — replace with real favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap"
     rel="stylesheet"
   >
 
@@ -35,874 +34,775 @@
 <body>
 
   <!-- =========================================================
-       NAV
+       MAIN SITE
   ========================================================= -->
 
-  <header class="site-header" role="banner">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="nav-logo" href="/" aria-label="InviteWalla home">
-        InviteWalla
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#showcase">See an example</a></li>
-        <!-- <li><a href="#enquire" class="nav-cta">Get started</a></li> -->
-      </ul>
-      <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu" hidden>
-      <ul role="list">
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#showcase">See an example</a></li>
-        <li><a href="#occasions">Occasions</a></li>
-        <!-- <li><a href="#enquire">Get started</a></li> -->
-      </ul>
-    </div>
-  </header>
+  <div class="iw-site iw-site--visible" id="iwSite">
+
+    <!-- ── NAV ─────────────────────────────────────────────── -->
+
+    <header class="iw-nav" id="iwNav" role="banner">
+      <nav aria-label="Main navigation">
+        <a class="iw-nav-logo" href="/" aria-label="InviteWalla home">
+          <span class="iw-nav-logo-text">InviteWalla</span>
+        </a>
+        <ul class="iw-nav-links" role="list">
+          <li><a href="#occasions">Occasions</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="invite/aanya-rohan/">Explore</a></li>
+          <li>
+            <a href="#enquire" class="iw-nav-cta">Create Your Invitation</a>
+          </li>
+        </ul>
+        <button class="iw-nav-toggle" id="iwNavToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="iwMobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="iw-mobile-menu" id="iwMobileMenu" hidden>
+        <ul role="list">
+          <li><a href="#occasions">Occasions</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="invite/aanya-rohan/">Explore</a></li>
+          <li><a href="#enquire" class="iw-mobile-cta">Create Your Invitation</a></li>
+        </ul>
+      </div>
+    </header>
 
 
-  <!-- =========================================================
-       HERO
-  ========================================================= -->
+    <!-- ── HERO ────────────────────────────────────────────── -->
 
-  <section class="mkt-hero" aria-labelledby="hero-heading">
+    <section class="iw-hero" id="hero" aria-labelledby="iw-hero-heading">
 
-    <div class="mkt-hero-inner">
+      <div class="iw-hero-inner">
 
-      <div class="mkt-hero-text">
+        <!-- LEFT: Envelope illustration -->
+        <div class="iw-hero-left" aria-hidden="true">
+          <div class="iw-hero-envelope" id="iwHeroEnvelope">
 
-        <p class="mkt-eyebrow">Digital invitations, reimagined</p>
+            <svg class="iw-hero-env-svg" viewBox="0 0 240 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="236" height="168" rx="6" fill="#F5EAD8" stroke="#E8D5C0" stroke-width="1.5"/>
+              <path d="M2 2 L122 98 L238 2 Z" fill="#EDD9BC" stroke="#E8D5C0" stroke-width="0.8"/>
+              <path d="M2 170 L84 98 L2 2" fill="#E4CCA8" opacity="0.45"/>
+              <path d="M238 170 L156 98 L238 2" fill="#E4CCA8" opacity="0.38"/>
+              <circle cx="120" cy="132" r="20" fill="#B58A3A" opacity="0.88"/>
+              <circle cx="120" cy="132" r="16" fill="none" stroke="#D4A84B" stroke-width="1" opacity="0.65"/>
+              <text x="120" y="137" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="12" font-style="italic" fill="#FBF5EC" opacity="0.92">IW</text>
+              <!-- Ribbon horizontal -->
+              <rect x="2" y="84" width="236" height="5" fill="#D9A99B" opacity="0.3"/>
+              <!-- Corner florals -->
+              <path d="M16 16 Q24 10 32 16 Q24 22 16 16Z" fill="#D9A99B" opacity="0.55"/>
+              <circle cx="24" cy="16" r="2" fill="#B58A3A" opacity="0.4"/>
+              <path d="M204 16 Q212 10 220 16 Q212 22 204 16Z" fill="#D9A99B" opacity="0.55"/>
+              <circle cx="212" cy="16" r="2" fill="#B58A3A" opacity="0.4"/>
+              <path d="M16 154 Q24 148 32 154 Q24 160 16 154Z" fill="#D9A99B" opacity="0.45"/>
+              <path d="M204 154 Q212 148 220 154 Q212 160 204 154Z" fill="#D9A99B" opacity="0.45"/>
+              <!-- Dashed inner border -->
+              <rect x="10" y="10" width="220" height="152" rx="4" fill="none" stroke="#B58A3A" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.25"/>
+            </svg>
 
-        <h1 class="mkt-hero-heading" id="hero-heading">
-          Your invitation<br>
-          <em>should be more<br>than a card.</em>
-        </h1>
+            <!-- Florals around envelope -->
+            <div class="iw-hero-florals">
+              <svg class="hero-floral hero-floral-1" viewBox="0 0 44 44" fill="none" width="40" height="40">
+                <circle cx="22" cy="22" r="5" fill="#D9A99B" opacity="0.85"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.55" transform="rotate(0 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.5"  transform="rotate(45 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.55" transform="rotate(90 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.5"  transform="rotate(135 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.55" transform="rotate(180 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.5"  transform="rotate(225 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.55" transform="rotate(270 22 22)"/>
+                <ellipse cx="22" cy="11" rx="4.5" ry="8" fill="#D9A99B" opacity="0.5"  transform="rotate(315 22 22)"/>
+              </svg>
+              <svg class="hero-floral hero-floral-2" viewBox="0 0 34 34" fill="none" width="28" height="28">
+                <circle cx="17" cy="17" r="4" fill="#B58A3A" opacity="0.75"/>
+                <ellipse cx="17" cy="8"  rx="3" ry="7" fill="#D4A84B" opacity="0.5" transform="rotate(0 17 17)"/>
+                <ellipse cx="17" cy="8"  rx="3" ry="7" fill="#D4A84B" opacity="0.5" transform="rotate(60 17 17)"/>
+                <ellipse cx="17" cy="8"  rx="3" ry="7" fill="#D4A84B" opacity="0.5" transform="rotate(120 17 17)"/>
+                <ellipse cx="17" cy="8"  rx="3" ry="7" fill="#D4A84B" opacity="0.5" transform="rotate(180 17 17)"/>
+                <ellipse cx="17" cy="8"  rx="3" ry="7" fill="#D4A84B" opacity="0.5" transform="rotate(240 17 17)"/>
+                <ellipse cx="17" cy="8"  rx="3" ry="7" fill="#D4A84B" opacity="0.5" transform="rotate(300 17 17)"/>
+              </svg>
+              <!-- Baby's breath sprig -->
+              <svg class="hero-floral hero-floral-3" viewBox="0 0 22 42" fill="none" width="16" height="30">
+                <line x1="11" y1="42" x2="11" y2="6" stroke="#A8C4A0" stroke-width="0.9" opacity="0.55"/>
+                <path d="M11 34 Q5 26 9 18 Q14 24 11 34Z" fill="#A8C4A0" opacity="0.5"/>
+                <path d="M11 34 Q17 26 13 18 Q8 24 11 34Z" fill="#A8C4A0" opacity="0.45"/>
+                <circle cx="7"  cy="10" r="2.5" fill="#D9A99B" opacity="0.6"/>
+                <circle cx="11" cy="6"  r="2"   fill="#F2DDD8" opacity="0.7"/>
+                <circle cx="15" cy="10" r="2.5" fill="#D9A99B" opacity="0.6"/>
+                <circle cx="5"  cy="16" r="2"   fill="#F2DDD8" opacity="0.55"/>
+                <circle cx="17" cy="16" r="2"   fill="#D9A99B" opacity="0.55"/>
+              </svg>
+            </div>
 
-        <p class="mkt-hero-sub">
-          Beautiful, interactive digital invitations
-          for life's special moments.
+            <!-- Floating hearts -->
+            <div class="iw-hero-hearts" aria-hidden="true">
+              <svg class="hero-heart hero-heart-1" viewBox="0 0 20 18" width="16" height="14">
+                <path d="M10 16 C10 16 2 10 2 5.5 A3.8 3.8 0 0 1 10 4 A3.8 3.8 0 0 1 18 5.5 C18 10 10 16 10 16Z" fill="#D9A99B" opacity="0.75"/>
+              </svg>
+              <svg class="hero-heart hero-heart-2" viewBox="0 0 20 18" width="11" height="10">
+                <path d="M10 16 C10 16 2 10 2 5.5 A3.8 3.8 0 0 1 10 4 A3.8 3.8 0 0 1 18 5.5 C18 10 10 16 10 16Z" fill="#B58A3A" opacity="0.55"/>
+              </svg>
+              <svg class="hero-heart hero-heart-3" viewBox="0 0 20 18" width="9" height="8">
+                <path d="M10 16 C10 16 2 10 2 5.5 A3.8 3.8 0 0 1 10 4 A3.8 3.8 0 0 1 18 5.5 C18 10 10 16 10 16Z" fill="#D9A99B" opacity="0.65"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CENTER: Brand identity -->
+        <div class="iw-hero-center">
+
+          <div class="iw-hero-logo-wrap iw-hero-anim iw-hero-anim--0">
+            <p class="iw-hero-logo-text">InviteWalla</p>
+          </div>
+
+          <div class="iw-hero-gold-line iw-hero-anim iw-hero-anim--1" aria-hidden="true">
+            <svg viewBox="0 0 220 14" fill="none" width="220" height="14" class="iw-gold-svg">
+              <path class="iw-gold-path" d="M8 7 Q55 2 110 7 Q165 12 212 7" stroke="#B58A3A" stroke-width="1" fill="none" opacity="0.7"/>
+              <circle cx="4"   cy="7" r="2.5" fill="#B58A3A" opacity="0.65"/>
+              <circle cx="216" cy="7" r="2.5" fill="#B58A3A" opacity="0.65"/>
+            </svg>
+          </div>
+
+          <p class="iw-hero-tagline iw-hero-anim iw-hero-anim--2">
+            Har khaas mauke ka, khaas bulawa
+          </p>
+
+          <h1 class="iw-hero-heading iw-hero-anim iw-hero-anim--3" id="iw-hero-heading">
+            Beautiful Invitations<br>
+            <em>for Every Celebration</em>
+          </h1>
+
+          <div class="iw-hero-gold-line iw-hero-anim iw-hero-anim--4" aria-hidden="true">
+            <svg viewBox="0 0 220 14" fill="none" width="220" height="14" class="iw-gold-svg">
+              <path class="iw-gold-path" d="M8 7 Q55 12 110 7 Q165 2 212 7" stroke="#B58A3A" stroke-width="1" fill="none" opacity="0.7"/>
+              <circle cx="4"   cy="7" r="2.5" fill="#B58A3A" opacity="0.65"/>
+              <circle cx="216" cy="7" r="2.5" fill="#B58A3A" opacity="0.65"/>
+            </svg>
+          </div>
+
+          <div class="iw-hero-actions iw-hero-anim iw-hero-anim--5">
+            <a href="#enquire" class="iw-btn iw-btn-primary">Create Your Invitation</a>
+            <a href="invite/aanya-rohan/" class="iw-btn iw-btn-ghost">See an Example</a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Handwritten accent text -->
+        <div class="iw-hero-right" aria-hidden="true">
+
+          <div class="iw-hero-script-wrap">
+            <div class="iw-hero-vline"></div>
+            <div class="iw-hero-script-content">
+              <p class="iw-hero-script iw-hero-script--anim">Beautiful</p>
+              <p class="iw-hero-script-serif">Invitations</p>
+              <p class="iw-hero-script iw-hero-script--anim iw-hero-script--delay">for Every</p>
+              <p class="iw-hero-script-serif iw-hero-script-serif--gold">Celebration</p>
+            </div>
+          </div>
+
+          <!-- Decorative sparkles / dots -->
+          <div class="iw-hero-dots">
+            <svg viewBox="0 0 88 130" fill="none" width="88" height="130">
+              <circle cx="10"  cy="10"  r="1.5" fill="#B58A3A" opacity="0.6"/>
+              <circle cx="32"  cy="6"   r="1"   fill="#D9A99B" opacity="0.55"/>
+              <circle cx="54"  cy="14"  r="2"   fill="#B58A3A" opacity="0.45"/>
+              <circle cx="74"  cy="8"   r="1.2" fill="#D9A99B" opacity="0.6"/>
+              <circle cx="20"  cy="30"  r="1"   fill="#B58A3A" opacity="0.35"/>
+              <circle cx="64"  cy="36"  r="1.5" fill="#D9A99B" opacity="0.5"/>
+              <!-- 4-point star -->
+              <path d="M42 54 L44 48 L46 54 L52 56 L46 58 L44 64 L42 58 L36 56 Z" fill="#B58A3A" opacity="0.4"/>
+              <!-- Tiny star -->
+              <path d="M16 72 L17 68 L18 72 L22 73 L18 74 L17 78 L16 74 L12 73 Z" fill="#D9A99B" opacity="0.5"/>
+              <!-- Leaf doodle -->
+              <path d="M60 84 Q68 74 74 80 Q68 90 60 84Z" fill="#A8C4A0" opacity="0.38"/>
+              <line x1="60" y1="84" x2="74" y2="80" stroke="#A8C4A0" stroke-width="0.8" opacity="0.28"/>
+              <!-- Curly line -->
+              <path d="M4 100 Q22 92 38 100 Q54 108 70 100 Q80 94 84 100" stroke="#B58A3A" stroke-width="0.8" fill="none" opacity="0.3"/>
+              <!-- Bottom dots -->
+              <circle cx="16"  cy="116" r="1"   fill="#D9A99B" opacity="0.4"/>
+              <circle cx="34"  cy="121" r="1.5" fill="#B58A3A" opacity="0.35"/>
+              <circle cx="54"  cy="113" r="1"   fill="#D9A99B" opacity="0.45"/>
+              <circle cx="70"  cy="118" r="1.2" fill="#B58A3A" opacity="0.3"/>
+            </svg>
+          </div>
+
+          <!-- Occasion badges -->
+          <div class="iw-hero-badges">
+            <span class="iw-hero-badge">Weddings</span>
+            <span class="iw-hero-badge">Birthdays</span>
+            <span class="iw-hero-badge">Engagements</span>
+            <span class="iw-hero-badge">& More</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Occasion strip -->
+      <div class="iw-hero-occasions" aria-label="Occasions InviteWalla serves">
+        <ul class="iw-hero-occ-list" role="list">
+          <li>Weddings</li>
+          <li class="sep" aria-hidden="true">|</li>
+          <li>Birthdays</li>
+          <li class="sep" aria-hidden="true">|</li>
+          <li>Baby Showers</li>
+          <li class="sep" aria-hidden="true">|</li>
+          <li>Engagements</li>
+          <li class="sep" aria-hidden="true">|</li>
+          <li>Anniversaries</li>
+          <li class="sep" aria-hidden="true">|</li>
+          <li>Housewarmings</li>
+          <li class="sep" aria-hidden="true">|</li>
+          <li>&amp; More</li>
+        </ul>
+      </div>
+
+    </section>
+
+
+    <!-- ── STORY SECTION ───────────────────────────────────── -->
+
+    <section class="iw-story" id="story" aria-labelledby="iw-story-heading">
+
+      <div class="iw-section-container">
+        <p class="iw-eyebrow iw-eyebrow--light reveal">The InviteWalla story</p>
+        <h2 class="iw-section-heading iw-section-heading--light reveal" id="iw-story-heading">
+          Every moment<br><em>has a story.</em>
+        </h2>
+        <p class="iw-section-sub iw-section-sub--light reveal">
+          An invitation is more than logistics — it's the first chapter of a memory.
+          We craft every digital invitation with the care of hand-lettered stationery.
+          Beautiful enough to open. Memorable enough to keep.
+        </p>
+      </div>
+
+      <!-- Overlapping occasion cards -->
+      <div class="iw-story-cards reveal" aria-label="Sample invitation cards for different occasions">
+        <div class="iw-story-card iw-story-card--1">
+          <div class="iw-story-card-inner">
+            <p class="iw-story-card-label">Wedding</p>
+            <p class="iw-story-card-names">Priya &amp; Arjun</p>
+            <p class="iw-story-card-date">March 2025</p>
+          </div>
+        </div>
+        <div class="iw-story-card iw-story-card--2">
+          <div class="iw-story-card-inner">
+            <p class="iw-story-card-label">Birthday</p>
+            <p class="iw-story-card-names">Riya turns 30</p>
+            <p class="iw-story-card-date">April 2025</p>
+          </div>
+        </div>
+        <div class="iw-story-card iw-story-card--3">
+          <div class="iw-story-card-inner">
+            <p class="iw-story-card-label">Engagement</p>
+            <p class="iw-story-card-names">Meera &amp; Dev</p>
+            <p class="iw-story-card-date">May 2025</p>
+          </div>
+        </div>
+        <div class="iw-story-card iw-story-card--4">
+          <div class="iw-story-card-inner">
+            <p class="iw-story-card-label">Baby Shower</p>
+            <p class="iw-story-card-names">Baby Sharma</p>
+            <p class="iw-story-card-date">June 2025</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ── OCCASIONS ───────────────────────────────────────── -->
+
+    <section class="iw-occasions" id="occasions" aria-labelledby="iw-occasions-heading">
+
+      <div class="iw-section-container">
+        <p class="iw-eyebrow reveal">Made for every celebration</p>
+        <h2 class="iw-section-heading reveal" id="iw-occasions-heading">
+          Whatever you're<br><em>celebrating.</em>
+        </h2>
+      </div>
+
+      <div class="iw-occasions-track-wrap" role="list" aria-label="Occasions InviteWalla serves">
+        <ul class="iw-occasions-track" id="iwOccasionsTrack">
+          <li class="iw-occasion iw-occasion--active" data-label="Wedding"     data-card="wedding"     role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">💍</span>
+            <span class="iw-occ-label">Wedding</span>
+          </li>
+          <li class="iw-occasion" data-label="Birthday"    data-card="birthday"    role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">🎂</span>
+            <span class="iw-occ-label">Birthday</span>
+          </li>
+          <li class="iw-occasion" data-label="Baby Shower" data-card="baby"        role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">👶</span>
+            <span class="iw-occ-label">Baby Shower</span>
+          </li>
+          <li class="iw-occasion" data-label="Engagement"  data-card="engagement"  role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">💎</span>
+            <span class="iw-occ-label">Engagement</span>
+          </li>
+          <li class="iw-occasion" data-label="Anniversary" data-card="anniversary" role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">🌹</span>
+            <span class="iw-occ-label">Anniversary</span>
+          </li>
+          <li class="iw-occasion" data-label="Housewarming" data-card="housewarming" role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">🏡</span>
+            <span class="iw-occ-label">Housewarming</span>
+          </li>
+          <li class="iw-occasion" data-label="Party"       data-card="party"       role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">🎉</span>
+            <span class="iw-occ-label">Party</span>
+          </li>
+          <li class="iw-occasion" data-label="Celebration" data-card="celebration" role="listitem" tabindex="0">
+            <span class="iw-occ-icon" aria-hidden="true">✨</span>
+            <span class="iw-occ-label">Celebration</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Occasion card preview -->
+      <div class="iw-occasions-card-area" aria-live="polite">
+        <div class="iw-occ-card iw-occ-card--active" id="occ-card-wedding"     data-occ="wedding">
+          <div class="iw-occ-card-inner">
+            <p class="iw-occ-card-label">Wedding Invitation</p>
+            <p class="iw-occ-card-names">Aanya &amp; Rohan</p>
+            <p class="iw-occ-card-detail">14 · February · 2025 · The St. Regis Mumbai</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-birthday"    data-occ="birthday">
+          <div class="iw-occ-card-inner iw-occ-card-inner--birthday">
+            <p class="iw-occ-card-label">Birthday Invitation</p>
+            <p class="iw-occ-card-names">Riya turns 30</p>
+            <p class="iw-occ-card-detail">April 2025 · Taj Mahal Palace, Mumbai</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-baby"        data-occ="baby">
+          <div class="iw-occ-card-inner iw-occ-card-inner--baby">
+            <p class="iw-occ-card-label">Baby Shower</p>
+            <p class="iw-occ-card-names">Baby Sharma</p>
+            <p class="iw-occ-card-detail">June 2025 · ITC Grand Bharat</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-engagement"  data-occ="engagement">
+          <div class="iw-occ-card-inner iw-occ-card-inner--engagement">
+            <p class="iw-occ-card-label">Engagement</p>
+            <p class="iw-occ-card-names">Meera &amp; Dev</p>
+            <p class="iw-occ-card-detail">May 2025 · The Leela Palace, Delhi</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-anniversary" data-occ="anniversary">
+          <div class="iw-occ-card-inner iw-occ-card-inner--anniversary">
+            <p class="iw-occ-card-label">Anniversary</p>
+            <p class="iw-occ-card-names">25 Years Together</p>
+            <p class="iw-occ-card-detail">December 2025 · Grand Hyatt, Chennai</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-housewarming" data-occ="housewarming">
+          <div class="iw-occ-card-inner iw-occ-card-inner--housewarming">
+            <p class="iw-occ-card-label">Housewarming</p>
+            <p class="iw-occ-card-names">The Patel Family</p>
+            <p class="iw-occ-card-detail">September 2025 · Pune</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-party"       data-occ="party">
+          <div class="iw-occ-card-inner iw-occ-card-inner--party">
+            <p class="iw-occ-card-label">Party</p>
+            <p class="iw-occ-card-names">New Year's Gala</p>
+            <p class="iw-occ-card-detail">31 Dec 2025 · Bandra Rooftop</p>
+          </div>
+        </div>
+        <div class="iw-occ-card" id="occ-card-celebration" data-occ="celebration">
+          <div class="iw-occ-card-inner iw-occ-card-inner--celebration">
+            <p class="iw-occ-card-label">Celebration</p>
+            <p class="iw-occ-card-names">Your Special Moment</p>
+            <p class="iw-occ-card-detail">Any occasion · Anywhere in India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="iw-occasions-active-label" aria-live="polite">
+        <span id="iwActiveOccLabel">Wedding</span>
+      </div>
+
+    </section>
+
+
+    <!-- ── SHOWCASE ────────────────────────────────────────── -->
+
+    <section class="iw-showcase" id="showcase" aria-labelledby="iw-showcase-heading">
+
+      <div class="iw-section-container">
+
+        <p class="iw-eyebrow reveal">See it come alive</p>
+        <h2 class="iw-section-heading reveal" id="iw-showcase-heading">
+          See an invitation<br><em>come to life.</em>
+        </h2>
+        <p class="iw-section-sub reveal">
+          Aanya &amp; Rohan's wedding invitation — a real example of what InviteWalla creates.
+          Every detail crafted with care.
         </p>
 
-        <div class="mkt-hero-actions">
-          <!-- CTA hidden until funnel is ready
-          <a href="#enquire" class="btn btn-primary">
-            Create Your Invitation
-          </a>
-          -->
-          <a href="invite/aanya-rohan/" class="btn btn-ghost">
-            See an Example
-          </a>
-        </div>
+        <div class="iw-demo-wrap" id="iwDemoWrap">
+          <div class="iw-demo-sticky">
 
-      </div>
+            <div class="iw-demo-card-stack" id="iwDemoStack" aria-hidden="true">
 
-      <div class="mkt-hero-visual" aria-hidden="true">
-        <div class="phone-mockup">
-          <div class="phone-screen">
-            <div class="phone-invitation">
-              <div class="pi-label">Together with their families</div>
-              <div class="pi-name">Aanya</div>
-              <div class="pi-and">&amp;</div>
-              <div class="pi-name">Rohan</div>
-              <div class="pi-date">14 · FEBRUARY · 2025</div>
-              <div class="pi-btn">Tap to open</div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="iw-demo-layer iw-demo-card-cover" id="iwDemoCardCover">
+                <p class="idcc-small">Together with their families</p>
+                <p class="idcc-name">Aanya</p>
+                <p class="idcc-amp">&amp;</p>
+                <p class="idcc-name">Rohan</p>
+                <p class="idcc-date">14 · February · 2025</p>
+              </div>
 
-    </div>
+              <div class="iw-demo-layer iw-demo-story" id="iwDemoStory">
+                <p class="ids-label">Their Story</p>
+                <p class="ids-text">It started with a chance meeting at a friend's rooftop in Mumbai — one conversation that somehow never ended.</p>
+                <p class="ids-text">Now, after three years of adventures, late-night drives and a thousand little moments, they're ready to begin the greatest chapter yet.</p>
+              </div>
 
-    <div class="mkt-hero-scroll" aria-hidden="true">
-      <svg width="20" height="32" viewBox="0 0 20 32" fill="none" aria-hidden="true">
-        <rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-        <circle class="scroll-dot" cx="10" cy="9" r="2.5" fill="currentColor" opacity="0.6"/>
-      </svg>
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       TRUST BAR
-  ========================================================= -->
-
-  <div class="trust-bar" aria-label="What InviteWalla includes">
-    <ul class="trust-items" role="list">
-      <li>
-        <span aria-hidden="true">📱</span>
-        Beautiful on every phone
-      </li>
-      <li>
-        <span aria-hidden="true">💬</span>
-        Easy to share on WhatsApp
-      </li>
-      <li>
-        <span aria-hidden="true">📸</span>
-        Photos &amp; stories
-      </li>
-      <li>
-        <span aria-hidden="true">🗺️</span>
-        Venue &amp; maps
-      </li>
-      <li>
-        <span aria-hidden="true">🎵</span>
-        Music &amp; animations
-      </li>
-    </ul>
-  </div>
-
-
-  <!-- =========================================================
-       SHOWCASE
-  ========================================================= -->
-
-  <section class="mkt-showcase" id="showcase" aria-labelledby="showcase-heading">
-
-    <div class="section-container">
-
-      <div class="mkt-eyebrow-row reveal">
-        <span class="tag">Live example</span>
-      </div>
-
-      <h2 class="mkt-section-heading reveal" id="showcase-heading">
-        See an invitation<br>come to life
-      </h2>
-
-      <p class="mkt-section-text reveal">
-        InviteWalla creates interactive digital invitations that bring your
-        celebration to life — with photos, your love story, event details,
-        venue &amp; maps, animations, and music.
-      </p>
-
-      <div class="showcase-card reveal" aria-label="Sample wedding invitation preview">
-
-        <div class="showcase-preview">
-
-          <div class="showcase-phone-wrap" aria-hidden="true">
-            <div class="phone-mockup phone-mockup--dark">
-              <div class="phone-screen phone-screen--dark">
-                <div class="phone-invitation phone-invitation--dark">
-                  <div class="pi-label">Together with their families</div>
-                  <div class="pi-name pi-name--gold">Aanya</div>
-                  <div class="pi-and pi-and--gold">&amp;</div>
-                  <div class="pi-name pi-name--gold">Rohan</div>
-                  <div class="pi-date">14 · FEBRUARY · 2025</div>
-                  <div class="pi-btn pi-btn--outline">Tap to open</div>
+              <div class="iw-demo-layer iw-demo-events" id="iwDemoEvents">
+                <p class="ide-label">The Events</p>
+                <div class="ide-event">
+                  <span class="ide-icon">🌸</span>
+                  <div>
+                    <p class="ide-title">Mehendi &amp; Sangeet</p>
+                    <p class="ide-detail">13 Feb · 6:00 PM</p>
+                  </div>
+                </div>
+                <div class="ide-event">
+                  <span class="ide-icon">💍</span>
+                  <div>
+                    <p class="ide-title">Wedding Ceremony</p>
+                    <p class="ide-detail">14 Feb · 11:00 AM</p>
+                  </div>
+                </div>
+                <div class="ide-event">
+                  <span class="ide-icon">✨</span>
+                  <div>
+                    <p class="ide-title">Reception</p>
+                    <p class="ide-detail">14 Feb · 7:00 PM</p>
+                  </div>
                 </div>
               </div>
+
+              <div class="iw-demo-layer iw-demo-venue" id="iwDemoVenue">
+                <p class="idv-label">Venue</p>
+                <p class="idv-name">The St. Regis Mumbai</p>
+                <p class="idv-address">462 Senapati Bapat Marg<br>Lower Parel, Mumbai</p>
+                <div class="idv-map-placeholder" aria-hidden="true">
+                  <svg viewBox="0 0 200 90" fill="none">
+                    <rect width="200" height="90" fill="#F5EAD8" rx="8"/>
+                    <circle cx="100" cy="45" r="8" fill="#B58A3A" opacity=".75"/>
+                    <circle cx="100" cy="45" r="16" stroke="#B58A3A" stroke-width="1.5" opacity=".3"/>
+                    <path d="M60 45 Q80 30 100 45 Q120 60 140 45" stroke="#D9A99B" stroke-width="1" opacity=".5" fill="none"/>
+                  </svg>
+                </div>
+              </div>
+
             </div>
-          </div>
 
-          <div class="showcase-features" aria-hidden="true">
-            <div class="sf-item">📸 Photo gallery</div>
-            <div class="sf-item">💌 Love story</div>
-            <div class="sf-item">📅 3 event details</div>
-            <div class="sf-item">🗺️ Venue &amp; directions</div>
-            <div class="sf-item">⏳ Live countdown</div>
-            <div class="sf-item">🎵 Music</div>
-          </div>
+            <div class="iw-demo-progress" aria-hidden="true">
+              <button class="iw-demo-pip iw-demo-pip--active" aria-label="Card cover"></button>
+              <button class="iw-demo-pip" aria-label="Their story"></button>
+              <button class="iw-demo-pip" aria-label="Events"></button>
+              <button class="iw-demo-pip" aria-label="Venue"></button>
+            </div>
 
+          </div>
         </div>
 
-        <div class="showcase-info">
-
-          <div class="showcase-badge">Showcase Invitation</div>
-
-          <h3 class="showcase-names">Aanya &amp; Rohan</h3>
-
-          <p class="showcase-date">14 February 2025 · Mumbai, Maharashtra</p>
-
-          <p class="showcase-desc">
-            A real example of what InviteWalla creates — interactive,
-            beautiful, and built around your story. Everything your
-            guests need in one shareable link.
-          </p>
-
-          <ul class="showcase-list" role="list">
-            <li>Interactive opening animation</li>
-            <li>Full photo gallery</li>
-            <li>Multiple ceremony events</li>
-            <li>Venue details with Google Maps</li>
-            <li>Live countdown to the big day</li>
-            <li>Optional background music</li>
-          </ul>
-
-          <a
-            href="invite/aanya-rohan/"
-            class="btn btn-primary"
-            aria-label="View a sample wedding invitation"
-          >
-            View Sample Invitation
+        <div class="iw-showcase-end reveal">
+          <p class="iw-showcase-end-text">This could be yours.</p>
+          <a href="invite/aanya-rohan/" class="iw-btn iw-btn-primary">
+            Explore the full invitation →
           </a>
-
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- =========================================================
-       OCCASIONS
-  ========================================================= -->
+    <!-- ── ONE LINK ─────────────────────────────────────────── -->
 
-  <section class="mkt-occasions" id="occasions" aria-labelledby="occasions-heading">
+    <section class="iw-onelink" id="one-link" aria-labelledby="iw-onelink-heading">
+      <div class="iw-section-container">
 
-    <div class="section-container">
+        <h2 class="iw-onelink-heading reveal" id="iw-onelink-heading">
+          One beautiful link.<br>
+          <em>Everything your guests need.</em>
+        </h2>
 
-      <div class="mkt-eyebrow-row reveal">
-        <span class="tag tag--light">Every celebration</span>
+        <div class="iw-onelink-visual reveal" aria-hidden="true">
+          <div class="iw-link-pill" id="iwLinkPill">
+            <span class="iw-link-icon">🔗</span>
+            <span class="iw-link-text">invitewalla.com/invite/aanya-rohan</span>
+          </div>
+          <div class="iw-link-expands" id="iwLinkExpands">
+            <div class="iw-link-item" style="--i:0"><span class="iw-li-icon">📖</span> Your Story</div>
+            <div class="iw-link-item" style="--i:1"><span class="iw-li-icon">📅</span> All Your Events</div>
+            <div class="iw-link-item" style="--i:2"><span class="iw-li-icon">📸</span> Photos &amp; Gallery</div>
+            <div class="iw-link-item" style="--i:3"><span class="iw-li-icon">🗺️</span> Venue &amp; Directions</div>
+          </div>
+        </div>
+
+        <p class="iw-onelink-sub reveal">
+          Nothing to download. Nothing to print.<br>
+          Just one link that holds everything.
+        </p>
+
       </div>
+    </section>
 
-      <h2 class="mkt-section-heading mkt-section-heading--light reveal" id="occasions-heading">
-        Made for every moment
-      </h2>
 
-      <p class="mkt-section-text mkt-section-text--light reveal">
-        Whatever you're celebrating, InviteWalla creates an invitation
-        that feels as special as the moment itself.
-      </p>
+    <!-- ── COMPARE ─────────────────────────────────────────── -->
 
-      <!-- Occasions grid — add or remove items freely -->
-      <ul class="occasions-grid reveal" role="list">
+    <section class="iw-compare" id="compare" aria-labelledby="iw-compare-heading">
+      <div class="iw-section-container">
 
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">💍</div>
-          <div class="occasion-name">Wedding</div>
-        </li>
+        <p class="iw-eyebrow iw-eyebrow--gold reveal">Sound familiar?</p>
+        <h2 class="iw-section-heading iw-section-heading--light reveal" id="iw-compare-heading">
+          Some invitations get<br><em>lost in a chat.</em>
+        </h2>
 
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">🎂</div>
-          <div class="occasion-name">Birthday</div>
-        </li>
+        <div class="iw-compare-layout">
 
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">👶</div>
-          <div class="occasion-name">Baby Shower</div>
-        </li>
-
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">💎</div>
-          <div class="occasion-name">Engagement</div>
-        </li>
-
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">🌹</div>
-          <div class="occasion-name">Anniversary</div>
-        </li>
-
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">🏡</div>
-          <div class="occasion-name">Housewarming</div>
-        </li>
-
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">🎉</div>
-          <div class="occasion-name">Party</div>
-        </li>
-
-        <li class="occasion-item">
-          <div class="occasion-icon" aria-hidden="true">✨</div>
-          <div class="occasion-name">Celebration</div>
-        </li>
-
-      </ul>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       HOW IT WORKS
-  ========================================================= -->
-
-  <section class="mkt-how" id="how-it-works" aria-labelledby="how-heading">
-
-    <div class="section-container">
-
-      <div class="mkt-eyebrow-row reveal">
-        <span class="tag">The process</span>
-      </div>
-
-      <h2 class="mkt-section-heading reveal" id="how-heading">
-        How it works
-      </h2>
-
-      <p class="mkt-section-text reveal">
-        We handle everything. You just share your details and we'll
-        take care of the rest.
-      </p>
-
-      <ol class="steps-grid" role="list">
-
-        <li class="step reveal">
-          <div class="step-number" aria-hidden="true">01</div>
-          <h3 class="step-title">Share your details</h3>
-          <p class="step-desc">
-            Tell us about your event and share your photos. The more you
-            share, the more personal we make it.
-          </p>
-        </li>
-
-        <li class="step reveal">
-          <div class="step-number" aria-hidden="true">02</div>
-          <h3 class="step-title">Choose your style</h3>
-          <p class="step-desc">
-            Pick a design that feels like you — elegant, playful, minimal,
-            or bold. We'll tailor it to fit.
-          </p>
-        </li>
-
-        <li class="step reveal">
-          <div class="step-number" aria-hidden="true">03</div>
-          <h3 class="step-title">We create it</h3>
-          <p class="step-desc">
-            We turn your details into a beautiful, interactive digital
-            invitation. You review and approve before it goes out.
-          </p>
-        </li>
-
-        <li class="step reveal">
-          <div class="step-number" aria-hidden="true">04</div>
-          <h3 class="step-title">Share it</h3>
-          <p class="step-desc">
-            Send a single link to everyone who matters — over WhatsApp,
-            email, or wherever you like. No app required.
-          </p>
-        </li>
-
-      </ol>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       WHY INVITEWALLA
-  ========================================================= -->
-
-  <section class="mkt-why" id="why" aria-labelledby="why-heading">
-
-    <div class="section-container">
-
-      <div class="mkt-eyebrow-row reveal">
-        <span class="tag tag--light">Why InviteWalla</span>
-      </div>
-
-      <h2 class="mkt-section-heading mkt-section-heading--light reveal" id="why-heading">
-        Everything your guests<br>need in one place
-      </h2>
-
-      <ul class="benefits-grid reveal" role="list">
-
-        <li class="benefit">
-          <div class="benefit-icon" aria-hidden="true">📱</div>
-          <h3 class="benefit-title">Beautiful on every phone</h3>
-          <p class="benefit-desc">Designed for mobile first. Your invitation looks stunning on any device, anywhere.</p>
-        </li>
-
-        <li class="benefit">
-          <div class="benefit-icon" aria-hidden="true">💬</div>
-          <h3 class="benefit-title">Easy to share on WhatsApp</h3>
-          <p class="benefit-desc">One link. Share it on WhatsApp, email, Instagram — wherever your guests are.</p>
-        </li>
-
-        <li class="benefit">
-          <div class="benefit-icon" aria-hidden="true">📸</div>
-          <h3 class="benefit-title">Photos &amp; your story</h3>
-          <p class="benefit-desc">A gallery of your favourite moments and the story of how you got here.</p>
-        </li>
-
-        <li class="benefit">
-          <div class="benefit-icon" aria-hidden="true">📅</div>
-          <h3 class="benefit-title">All event details</h3>
-          <p class="benefit-desc">Multiple ceremonies or events — all neatly organised so guests never miss a thing.</p>
-        </li>
-
-        <li class="benefit">
-          <div class="benefit-icon" aria-hidden="true">🗺️</div>
-          <h3 class="benefit-title">Venue &amp; maps</h3>
-          <p class="benefit-desc">Google Maps links built in. Guests tap once and get directions — no confusion.</p>
-        </li>
-
-        <li class="benefit">
-          <div class="benefit-icon" aria-hidden="true">🎵</div>
-          <h3 class="benefit-title">Music &amp; animations</h3>
-          <p class="benefit-desc">Set the mood with background music and beautiful reveal animations throughout.</p>
-        </li>
-
-      </ul>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       FINAL CTA
-  ========================================================= -->
-
-  <section class="mkt-final-cta" aria-labelledby="final-cta-heading">
-
-    <div class="section-container">
-
-      <h2 class="mkt-final-cta-heading reveal" id="final-cta-heading">
-        Have a moment<br>worth celebrating?
-      </h2>
-
-      <p class="mkt-final-cta-sub reveal">
-        Let's create an invitation your guests will remember.
-      </p>
-
-      <!-- CTA hidden until funnel is ready
-      <div class="reveal">
-        <a href="#enquire" class="btn btn-primary btn-large">
-          Create My Invitation
-        </a>
-      </div>
-      -->
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       ENQUIRY / LEAD FORM
-  ========================================================= -->
-
-  <section class="mkt-enquire" id="enquire" aria-labelledby="enquire-heading">
-
-    <div class="section-container">
-
-      <div class="mkt-eyebrow-row reveal">
-        <span class="tag">Get in touch</span>
-      </div>
-
-      <h2 class="mkt-section-heading reveal" id="enquire-heading">
-        Start your invitation
-      </h2>
-
-      <p class="mkt-section-text reveal">
-        Fill in your details below and we'll get back to you within 24 hours.
-        Or reach us directly on WhatsApp — whichever feels easier.
-      </p>
-
-      <div class="enquire-layout reveal">
-
-        <!-- Lead form -->
-        <form
-          class="enquiry-form"
-          id="enquiryForm"
-          novalidate
-          aria-label="Enquiry form"
-        >
-
-          <!--
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            FORM SUBMISSION PLACEHOLDER
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            Replace the handleFormSubmit() function below
-            with your preferred submission mechanism:
-
-            Option A — Formspree (free tier available):
-              fetch("https://formspree.io/f/YOUR_FORM_ID", { method: "POST", body: formData })
-
-            Option B — EmailJS:
-              emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", this)
-
-            Option C — Netlify Forms:
-              Add data-netlify="true" to <form> and name="enquiry"
-
-            Option D — Google Forms redirect:
-              Change form action to your Google Form URL
-
-            Option E — WhatsApp only (no form backend needed):
-              Remove the form and use the WhatsApp CTA exclusively.
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          -->
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="field-name">Your name <span aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="field-name"
-                name="name"
-                autocomplete="name"
-                placeholder="Priya Sharma"
-                required
-                aria-required="true"
-              >
-              <span class="field-error" id="error-name" role="alert" aria-live="polite"></span>
+          <div class="iw-compare-old reveal">
+            <p class="iw-compare-label">The old way</p>
+            <div class="iw-compare-mess">
+              <div class="iw-mess-item" style="--r:-3deg;  --x:-6px">📄 PDF forwarded on WhatsApp</div>
+              <div class="iw-mess-item" style="--r: 2.5deg; --x:10px">❓ "What's the venue again?"</div>
+              <div class="iw-mess-item" style="--r:-4deg;  --x:-4px">🔁 "Can you resend the invite?"</div>
+              <div class="iw-mess-item" style="--r: 3.5deg; --x: 8px">⏰ "What time does it start?"</div>
+              <div class="iw-mess-item" style="--r:-2deg;  --x:-10px">📍 "Where exactly is the hall?"</div>
             </div>
           </div>
 
-          <div class="form-row form-row--two">
-
-            <div class="form-field">
-              <label for="field-whatsapp">WhatsApp number <span aria-hidden="true">*</span></label>
-              <input
-                type="tel"
-                id="field-whatsapp"
-                name="whatsapp"
-                autocomplete="tel"
-                placeholder="+91 98765 43210"
-                required
-                aria-required="true"
-              >
-              <span class="field-error" id="error-whatsapp" role="alert" aria-live="polite"></span>
-            </div>
-
-            <div class="form-field">
-              <label for="field-email">Email address</label>
-              <input
-                type="email"
-                id="field-email"
-                name="email"
-                autocomplete="email"
-                placeholder="priya@example.com"
-              >
-              <span class="field-error" id="error-email" role="alert" aria-live="polite"></span>
-            </div>
-
+          <div class="iw-compare-arrow" aria-hidden="true">
+            <svg viewBox="0 0 40 80" fill="none">
+              <path d="M20 0 L20 60 M10 50 L20 70 L30 50" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="field-occasion">Occasion <span aria-hidden="true">*</span></label>
-              <select
-                id="field-occasion"
-                name="occasion"
-                required
-                aria-required="true"
-              >
-                <option value="" disabled selected>Select an occasion…</option>
-                <option value="wedding">Wedding</option>
-                <option value="birthday">Birthday</option>
-                <option value="baby-shower">Baby Shower</option>
-                <option value="engagement">Engagement</option>
-                <option value="anniversary">Anniversary</option>
-                <option value="housewarming">Housewarming</option>
-                <option value="party">Party</option>
-                <option value="other">Other celebration</option>
-              </select>
-              <span class="field-error" id="error-occasion" role="alert" aria-live="polite"></span>
+          <div class="iw-compare-new reveal">
+            <p class="iw-compare-label iw-compare-label--new">InviteWalla</p>
+            <div class="iw-compare-clean">
+              <div class="iw-clean-item">✓ One beautiful, shareable link</div>
+              <div class="iw-clean-item">✓ Story &amp; photos always there</div>
+              <div class="iw-clean-item">✓ All event details, clear &amp; beautiful</div>
+              <div class="iw-clean-item">✓ Venue with maps, no confusion</div>
+              <div class="iw-clean-item">✓ Always up to date</div>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-field">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── HOW IT WORKS ─────────────────────────────────────── -->
+
+    <section class="iw-how" id="how-it-works" aria-labelledby="iw-how-heading">
+      <div class="iw-section-container">
+
+        <p class="iw-eyebrow reveal">Simple by design</p>
+        <h2 class="iw-section-heading reveal" id="iw-how-heading">
+          You celebrate.<br><em>We create.</em>
+        </h2>
+
+        <ol class="iw-steps" role="list">
+          <li class="iw-step reveal">
+            <div class="iw-step-num" aria-hidden="true">01</div>
+            <div class="iw-step-body">
+              <h3 class="iw-step-title">Tell us about your event.</h3>
+              <p class="iw-step-desc">Names, dates, venues, photos, your story — whatever makes it yours. A quick WhatsApp message is all it takes.</p>
+            </div>
+          </li>
+          <li class="iw-step reveal">
+            <div class="iw-step-num" aria-hidden="true">02</div>
+            <div class="iw-step-body">
+              <h3 class="iw-step-title">We design your invitation.</h3>
+              <p class="iw-step-desc">We turn your details into a beautiful digital experience. You review and approve before anything goes live.</p>
+            </div>
+          </li>
+          <li class="iw-step reveal">
+            <div class="iw-step-num" aria-hidden="true">03</div>
+            <div class="iw-step-body">
+              <h3 class="iw-step-title">Share it with everyone.</h3>
+              <p class="iw-step-desc">One beautiful link. WhatsApp it. Text it. Post it on Instagram. Share it anywhere in seconds.</p>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+
+    <!-- ── FINAL CTA ────────────────────────────────────────── -->
+
+    <section class="iw-final-cta" id="enquire" aria-labelledby="iw-cta-heading">
+
+      <div class="iw-final-cta-bg" aria-hidden="true">
+        <svg class="iw-final-bg-svg" viewBox="0 0 800 480" fill="none" preserveAspectRatio="xMidYMid slice">
+          <path d="M60 240 Q200 120 400 240 Q600 360 740 240" stroke="#B58A3A" stroke-width="1" fill="none" opacity="0.07"/>
+          <path d="M60 300 Q260 160 460 300 Q600 400 760 280" stroke="#D9A99B" stroke-width="1" fill="none" opacity="0.09"/>
+          <circle cx="700" cy="70"  r="80"  fill="#D9A99B" opacity="0.05"/>
+          <circle cx="80"  cy="410" r="100" fill="#B58A3A" opacity="0.04"/>
+          <!-- Corner floral hint -->
+          <path d="M680 50 Q700 30 720 50 Q700 70 680 50Z" fill="#D9A99B" opacity="0.08"/>
+          <path d="M680 50 Q720 40 720 60 Q700 80 680 50Z" fill="#B58A3A" opacity="0.06"/>
+        </svg>
+      </div>
+
+      <div class="iw-section-container">
+
+        <div class="iw-final-intro reveal">
+          <p class="iw-eyebrow">Let's create something beautiful</p>
+          <h2 class="iw-final-heading" id="iw-cta-heading">
+            Have a moment<br><em>worth celebrating?</em>
+          </h2>
+          <p class="iw-final-sub">
+            Let's turn it into an invitation worth opening.
+          </p>
+        </div>
+
+        <div class="iw-enquire-layout reveal">
+
+          <form class="iw-enquiry-form" id="enquiryForm" novalidate aria-label="Enquiry form">
+
+            <div class="iw-form-row iw-form-row--two">
+              <div class="iw-form-field">
+                <label for="field-name">Your name <span aria-hidden="true">*</span></label>
+                <input type="text" id="field-name" name="name" autocomplete="name" placeholder="Priya Sharma" required aria-required="true">
+                <span class="iw-field-error" id="error-name" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="iw-form-field">
+                <label for="field-whatsapp">WhatsApp number <span aria-hidden="true">*</span></label>
+                <input type="tel" id="field-whatsapp" name="whatsapp" autocomplete="tel" placeholder="+91 98765 43210" required aria-required="true">
+                <span class="iw-field-error" id="error-whatsapp" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="iw-form-row iw-form-row--two">
+              <div class="iw-form-field">
+                <label for="field-email">Email <span class="iw-optional">(optional)</span></label>
+                <input type="email" id="field-email" name="email" autocomplete="email" placeholder="priya@example.com">
+                <span class="iw-field-error" id="error-email" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="iw-form-field">
+                <label for="field-occasion">Occasion <span aria-hidden="true">*</span></label>
+                <select id="field-occasion" name="occasion" required aria-required="true">
+                  <option value="" disabled selected>Select your occasion…</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="baby-shower">Baby Shower</option>
+                  <option value="engagement">Engagement</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="housewarming">Housewarming</option>
+                  <option value="party">Party</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="iw-field-error" id="error-occasion" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="iw-form-field">
               <label for="field-message">Tell us about your event</label>
-              <textarea
-                id="field-message"
-                name="message"
-                rows="4"
-                placeholder="Date, venue, any special details you'd like to include…"
-              ></textarea>
+              <textarea id="field-message" name="message" rows="3" placeholder="Date, venue, names, any details you'd like to include…"></textarea>
             </div>
-          </div>
 
-          <button type="submit" class="btn btn-primary btn-submit">
-            Start My Invitation
-          </button>
+            <button type="submit" class="iw-btn iw-btn-primary iw-btn-submit">
+              Create My Invitation
+            </button>
 
-          <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+            <div class="iw-form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
 
-        </form>
+          </form>
 
-
-        <!-- WhatsApp CTA -->
-        <div class="whatsapp-cta">
-
-          <div class="wa-card">
-
-            <div class="wa-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <div class="iw-wa-panel">
+            <div class="iw-wa-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L.057 23.999l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.645-.525-5.153-1.437l-.369-.221-3.742.981.998-3.649-.241-.374A9.949 9.949 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
               </svg>
             </div>
-
-            <h3 class="wa-title">Prefer WhatsApp?</h3>
-
-            <p class="wa-desc">
-              Send us a message directly and we'll get back to you right away.
-            </p>
-
-            <!--
-              ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-              WHATSAPP CONFIGURATION
-              Replace INVITEWALLA_WHATSAPP_NUMBER below
-              with the actual business WhatsApp number
-              in international format without + or spaces.
-
-              Example: 919876543210  (India +91 98765 43210)
-              ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            -->
+            <p class="iw-wa-title">Prefer WhatsApp?</p>
+            <p class="iw-wa-desc">Message us directly and we'll get back to you right away.</p>
             <a
-              class="btn btn-whatsapp"
+              class="iw-btn iw-btn-whatsapp"
               id="waLink"
-              href="https://wa.me/INVITEWALLA_WHATSAPP_NUMBER?text=Hi%2C%20I%27d%20like%20to%20create%20a%20digital%20invitation%20with%20InviteWalla."
+              data-wa-link
+              href="https://wa.me/917055747717?text=Hi%2C%20I%27d%20like%20to%20create%20a%20digital%20invitation%20with%20InviteWalla."
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with InviteWalla on WhatsApp"
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" width="20" height="20">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L.057 23.999l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.645-.525-5.153-1.437l-.369-.221-3.742.981.998-3.649-.241-.374A9.949 9.949 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
               </svg>
               Chat on WhatsApp
             </a>
-
+            <div class="iw-wa-occasions">
+              <p>Weddings · Birthdays · Baby Showers</p>
+              <p>Engagements · Anniversaries · Parties</p>
+            </div>
           </div>
 
         </div>
 
       </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- =========================================================
-       SITE FOOTER
-  ========================================================= -->
+    <!-- ── FOOTER ────────────────────────────────────────────── -->
 
-  <footer class="site-footer" role="contentinfo">
+    <footer class="iw-footer" role="contentinfo">
+      <div class="iw-section-container">
+        <div class="iw-footer-inner">
 
-    <div class="section-container">
+          <div class="iw-footer-brand">
+            <p class="iw-footer-logo">InviteWalla</p>
+            <p class="iw-footer-tagline">Har khaas mauke ka,<br>khaas bulawa.</p>
+            <p class="iw-footer-sub">Beautiful Invitations for Every Celebration.</p>
+            <div class="iw-footer-social">
+              <a href="https://instagram.com/invitewalla" data-ig-link target="_blank" rel="noopener noreferrer" aria-label="InviteWalla on Instagram" class="iw-footer-social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/917055747717" data-wa-link target="_blank" rel="noopener noreferrer" aria-label="WhatsApp InviteWalla" class="iw-footer-social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L.057 23.999l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.645-.525-5.153-1.437l-.369-.221-3.742.981.998-3.649-.241-.374A9.949 9.949 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
 
-      <div class="site-footer-inner">
+          <nav aria-label="Footer navigation">
+            <ul class="iw-footer-links" role="list">
+              <li><a href="#how-it-works">How it works</a></li>
+              <li><a href="#occasions">Occasions</a></li>
+              <li><a href="invite/aanya-rohan/">See an example</a></li>
+              <li><a href="#enquire">Get started</a></li>
+            </ul>
+          </nav>
 
-        <div class="sf-brand">
-          <div class="sf-logo">InviteWalla</div>
-          <p class="sf-tagline">Beautiful digital invitations<br>for life's special moments.</p>
         </div>
-
-        <nav class="sf-nav" aria-label="Footer navigation">
-          <ul role="list">
-            <li><a href="#how-it-works">How it works</a></li>
-            <li><a href="#occasions">Occasions</a></li>
-            <li><a href="invite/aanya-rohan/">See an example</a></li>
-            <!-- <li><a href="#enquire">Get started</a></li> -->
-          </ul>
-        </nav>
-
+        <p class="iw-footer-copy">&copy; <span id="currentYear"></span> InviteWalla. All rights reserved.</p>
       </div>
+    </footer>
 
-      <div class="sf-bottom">
-        <p>&copy; <span id="currentYear"></span> InviteWalla. All rights reserved.</p>
-      </div>
-
-    </div>
-
-  </footer>
+  </div><!-- /.iw-site -->
 
 
-  <!-- =========================================================
-       JAVASCRIPT
-  ========================================================= -->
-
-  <script>
-
-    /* ── Current year in footer ─────────────────────────── */
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-
-    /* ── Mobile nav toggle ──────────────────────────────── */
-    const mobileToggle = document.querySelector(".nav-mobile-toggle");
-    const mobileMenu   = document.getElementById("mobile-menu");
-
-    mobileToggle.addEventListener("click", () => {
-      const isOpen = !mobileMenu.hidden;
-      mobileMenu.hidden = isOpen;
-      mobileToggle.setAttribute("aria-expanded", String(!isOpen));
-    });
-
-    /* Close mobile menu when a link is clicked */
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.hidden = true;
-        mobileToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-
-    /* ── Scroll reveal ──────────────────────────────────── */
-    (function initReveal() {
-
-      /* Respect reduced motion */
-      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      if (prefersReduced) {
-        document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
-        return;
-      }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-      );
-
-      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-    })();
-
-
-    /* ── Smooth scroll for anchor links ─────────────────── */
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", (e) => {
-        const target = document.querySelector(link.getAttribute("href"));
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-
-
-    /* ── Enquiry form — client-side validation ───────────── */
-    (function initForm() {
-
-      const form       = document.getElementById("enquiryForm");
-      const statusBox  = document.getElementById("formStatus");
-
-      if (!form) return;
-
-      function showError(fieldId, message) {
-        const errEl = document.getElementById("error-" + fieldId);
-        const input = document.getElementById("field-" + fieldId);
-        if (errEl) errEl.textContent = message;
-        if (input) {
-          input.setAttribute("aria-invalid", "true");
-          input.setAttribute("aria-describedby", "error-" + fieldId);
-        }
-      }
-
-      function clearErrors() {
-        form.querySelectorAll(".field-error").forEach(el => el.textContent = "");
-        form.querySelectorAll("[aria-invalid]").forEach(el => {
-          el.removeAttribute("aria-invalid");
-          el.removeAttribute("aria-describedby");
-        });
-      }
-
-      function validateForm(data) {
-        let valid = true;
-
-        if (!data.get("name") || data.get("name").trim().length < 2) {
-          showError("name", "Please enter your name.");
-          valid = false;
-        }
-
-        const phone = (data.get("whatsapp") || "").replace(/\s/g, "");
-        if (!phone || phone.length < 7) {
-          showError("whatsapp", "Please enter a valid WhatsApp number.");
-          valid = false;
-        }
-
-        const email = data.get("email");
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          showError("email", "Please enter a valid email address.");
-          valid = false;
-        }
-
-        if (!data.get("occasion")) {
-          showError("occasion", "Please select an occasion.");
-          valid = false;
-        }
-
-        return valid;
-      }
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        clearErrors();
-
-        const data = new FormData(form);
-        if (!validateForm(data)) return;
-
-        /*
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          FORM SUBMISSION — replace this block with your
-          chosen submission mechanism (see comment in HTML).
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-          Example (Formspree):
-
-          fetch("https://formspree.io/f/YOUR_FORM_ID", {
-            method: "POST",
-            body: data,
-            headers: { "Accept": "application/json" }
-          })
-          .then(res => res.ok ? showSuccess() : showFormError())
-          .catch(() => showFormError());
-
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        */
-
-        /* Fallback: direct to WhatsApp with pre-filled details */
-        const name     = data.get("name") || "";
-        const occasion = data.get("occasion") || "";
-        const message  = data.get("message") || "";
-
-        const waText = encodeURIComponent(
-          `Hi, I'd like to create a digital invitation with InviteWalla.\n\nName: ${name}\nOccasion: ${occasion}\n${message ? "Details: " + message : ""}`
-        );
-
-        /*
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          WHATSAPP NUMBER — same number used for the CTA.
-          Update INVITEWALLA_WHATSAPP_NUMBER in ONE place:
-          search this file for INVITEWALLA_WHATSAPP_NUMBER
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        */
-        const waNumber = "INVITEWALLA_WHATSAPP_NUMBER";
-        window.open(`https://wa.me/${waNumber}?text=${waText}`, "_blank", "noopener");
-
-        showSuccess();
-      });
-
-      function showSuccess() {
-        statusBox.hidden = false;
-        statusBox.className = "form-status form-status--success";
-        statusBox.textContent = "Thank you! We'll be in touch shortly.";
-        form.querySelectorAll("input, select, textarea").forEach(el => el.value = "");
-      }
-
-      function showFormError() {
-        statusBox.hidden = false;
-        statusBox.className = "form-status form-status--error";
-        statusBox.textContent = "Something went wrong. Please try WhatsApp instead.";
-      }
-
-    })();
-
-
-    /* ── Sticky header shadow on scroll ─────────────────── */
-    const siteHeader = document.querySelector(".site-header");
-    window.addEventListener("scroll", () => {
-      siteHeader.classList.toggle("scrolled", window.scrollY > 20);
-    }, { passive: true });
-
-  </script>
+  <script src="site-config.js"></script>
+  <script src="js/home.js"></script>
 
 </body>
 </html>
