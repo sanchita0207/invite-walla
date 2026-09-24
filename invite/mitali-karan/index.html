@@ -31,12 +31,21 @@
   <link rel="icon" href="/images/logo.jpeg" type="image/jpeg" />
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PT88P28T2R"></script>
+  <script src="/site-config.js"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PT88P28T2R');
+    (function() {
+      var id = (typeof SITE_CONFIG !== 'undefined') && SITE_CONFIG.gaMeasurementId;
+      if (!id) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', id);
+    })();
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,6 +55,19 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/opening.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/couple.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/venue.css">
+  <link rel="stylesheet" href="css/countdown.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
