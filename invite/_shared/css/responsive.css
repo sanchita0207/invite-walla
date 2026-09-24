@@ -1,0 +1,23 @@
+/* =========================================================
+   DESKTOP  (≥ 700px)
+========================================================= */
+
+@media (min-width: 700px) {
+
+  section {
+    padding: 140px 40px;
+  }
+
+  .couple-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-item.large {
+    grid-column: span 2;
+  }
+
+}

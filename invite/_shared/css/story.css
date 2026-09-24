@@ -1,0 +1,21 @@
+/* =========================================================
+   STORY  —  navy background
+========================================================= */
+
+.story {
+  background: var(--navy);
+  color: white;
+}
+
+.story .section-title {
+  color: var(--blush);
+}
+
+.story .eyebrow {
+  color: var(--blush);
+  opacity: .85;
+}
+
+.story .section-text {
+  color: rgba(255, 255, 255, .72);
+}

@@ -1,0 +1,118 @@
+/* =========================================================
+   GENERIC INVITATION OVERRIDES
+   Overrides the wedding-specific opening / hero styles
+   for non-wedding event types (birthday, baby shower, etc.)
+========================================================= */
+
+/* ── Opening: single large title instead of bride & groom names ── */
+
+.opening-main-title {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(44px, 12vw, 96px);
+  line-height: 1.1;
+  color: var(--blush);
+  margin-bottom: 20px;
+}
+
+/* Hide wedding-only elements if present */
+.opening-names,
+.opening-and,
+.hero-names,
+.hero-and {
+  display: none;
+}
+
+/* ── Hero: single centred title ── */
+
+.hero-main-title {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(52px, 14vw, 120px);
+  line-height: 1.1;
+  color: var(--blush);
+  margin-bottom: 10px;
+}
+
+/* ── Hosts section: reuses .couple styles with minor tweaks ── */
+
+.hosts {
+  background: var(--soft-ivory);
+}
+
+.hosts-intro {
+  max-width: 620px;
+  margin: 25px auto 0;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.host-grid {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+/* ── Person photo placeholder (when no photo is provided) ── */
+
+.person-photo-placeholder {
+  width: 230px;
+  height: 230px;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid rgba(192, 131, 106, .4);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+/* ── Occasion-specific accent colours ── */
+
+/* Birthday */
+.theme--birthday {
+  --rose-gold: #e07b39;
+  --blush:     #f5c9a8;
+}
+
+/* Baby Shower */
+.theme--baby {
+  --rose-gold: #7fb5c8;
+  --blush:     #b8d9e8;
+  --navy:      #2c4a5a;
+  --deep-navy: #1a2f3a;
+}
+
+/* Engagement */
+.theme--engagement {
+  --rose-gold: #9c7bb5;
+  --blush:     #d4bfe8;
+}
+
+/* Anniversary */
+.theme--anniversary {
+  --rose-gold: #b5823a;
+  --blush:     #e8d4b0;
+}
+
+/* Housewarming */
+.theme--housewarming {
+  --rose-gold: #6a9e6a;
+  --blush:     #b8d9b8;
+  --navy:      #2a3d2a;
+  --deep-navy: #1a2a1a;
+}
+
+/* Party */
+.theme--party {
+  --rose-gold: #c054a0;
+  --blush:     #f0b8de;
+}
+
+/* Celebration */
+.theme--celebration {
+  --rose-gold: #b58a3a;
+  --blush:     #e8d4a0;
+}

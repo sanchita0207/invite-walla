@@ -1,0 +1,30 @@
+# =========================================================
+# InviteWalla — Cloudflare Pages _redirects
+# =========================================================
+# Old flat URLs → new canonical typed-folder structure
+# 301 = permanent redirect (SEO-safe)
+# =========================================================
+
+# ── Wedding invites (old root → new /wedding/ prefix) ────
+
+/invite/aanya-rohan              /invite/wedding/aanya-rohan/    301
+/invite/aanya-rohan/             /invite/wedding/aanya-rohan/    301
+/invite/mitali-karan             /invite/wedding/mitali-karan/   301
+/invite/mitali-karan/            /invite/wedding/mitali-karan/   301
+
+# ── Old -sample slugs → new clean slugs ──────────────────
+
+/invite/baby-shower-sample       /invite/baby-shower/            301
+/invite/baby-shower-sample/      /invite/baby-shower/            301
+/invite/birthday-sample          /invite/birthday/               301
+/invite/birthday-sample/         /invite/birthday/               301
+/invite/engagement-sample        /invite/engagement/             301
+/invite/engagement-sample/       /invite/engagement/             301
+/invite/anniversary-sample       /invite/anniversary/            301
+/invite/anniversary-sample/      /invite/anniversary/            301
+/invite/housewarming-sample      /invite/housewarming/           301
+/invite/housewarming-sample/     /invite/housewarming/           301
+/invite/party-sample             /invite/party/                  301
+/invite/party-sample/            /invite/party/                  301
+/invite/celebration-sample       /invite/celebration/            301
+/invite/celebration-sample/      /invite/celebration/            301

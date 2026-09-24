@@ -147,6 +147,19 @@
 
   const occasionsTrack = document.getElementById("iwOccasionsTrack");
   const activeLabel    = document.getElementById("iwActiveOccLabel");
+  const occSampleLink  = document.getElementById("iwOccSampleLink");
+
+  // Map occasion card keys to sample invite URLs
+  const occSampleUrls = {
+    wedding:      "invite/wedding/aanya-rohan/",
+    birthday:     "invite/birthday/sample/",
+    baby:         "invite/baby-shower/sample/",
+    engagement:   "invite/engagement/sample/",
+    anniversary:  "invite/anniversary/sample/",
+    housewarming: "invite/housewarming/sample/",
+    party:        "invite/party/sample/",
+    celebration:  "invite/celebration/sample/",
+  };
 
   if (occasionsTrack) {
     const items = occasionsTrack.querySelectorAll(".iw-occasion");
@@ -174,29 +187,41 @@
           card.classList.toggle("iw-occ-card--active", card.dataset.occ === cardKey);
         });
       }
+
+      // Update "See a sample" link
+      if (occSampleLink && cardKey) {
+        const sampleUrl = occSampleUrls[cardKey];
+        if (sampleUrl) {
+          occSampleLink.href = sampleUrl;
+          occSampleLink.setAttribute("aria-label", "See a sample " + (el.dataset.label || "") + " invitation");
+        }
+      }
     }
 
     items.forEach(item => {
-      item.addEventListener("click", () => setActiveOccasion(item));
+      item.addEventListener("click", () => { if (!dragMoved) setActiveOccasion(item); });
       item.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setActiveOccasion(item); }
       });
     });
 
     // Drag-to-scroll
-    let isDragging = false, startX = 0, scrollLeft = 0;
+    let isDragging = false, dragMoved = false, startX = 0, scrollLeft = 0;
     const wrap = occasionsTrack.parentElement;
     if (wrap) {
-      wrap.addEventListener("mousedown", (e) => { isDragging = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft; });
+      wrap.addEventListener("mousedown", (e) => { isDragging = true; dragMoved = false; startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft; });
       wrap.addEventListener("mouseleave", () => { isDragging = false; });
       wrap.addEventListener("mouseup",    () => { isDragging = false; });
       wrap.addEventListener("mousemove",  (e) => {
         if (!isDragging) return;
-        e.preventDefault();
         const x = e.pageX - wrap.offsetLeft;
-        wrap.scrollLeft = scrollLeft - (x - startX);
+        if (Math.abs(x - startX) > 4) { dragMoved = true; e.preventDefault(); wrap.scrollLeft = scrollLeft - (x - startX); }
       });
     }
+
+    // Initialise the link href from the already-active pill on page load
+    const initialActive = occasionsTrack.querySelector(".iw-occasion--active");
+    if (initialActive) setActiveOccasion(initialActive);
   }
 
 

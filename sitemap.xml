@@ -1,32 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- ── Homepage ───────────────────────────────────────── -->
   <url>
     <loc>https://invitewalla.com/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- ── FAQ ────────────────────────────────────────────── -->
   <url>
-    <loc>https://invitewalla.com/invite/aanya-rohan/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <loc>https://invitewalla.com/faq/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── Wedding invitations ────────────────────────────── -->
+  <url>
+    <loc>https://invitewalla.com/invite/wedding/aanya-rohan/</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://invitewalla.com/faq/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <loc>https://invitewalla.com/invite/wedding/mitali-karan/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Invitation samples ─────────────────────────────── -->
+  <url>
+    <loc>https://invitewalla.com/invite/anniversary/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://invitewalla.com/invite/mitali-karan/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <loc>https://invitewalla.com/invite/baby-shower/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://invitewalla.com/invite/birthday/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://invitewalla.com/invite/celebration/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://invitewalla.com/invite/engagement/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://invitewalla.com/invite/housewarming/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://invitewalla.com/invite/party/sample/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

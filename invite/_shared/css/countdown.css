@@ -1,0 +1,60 @@
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown {
+  background: var(--soft-ivory);
+}
+
+.countdown-grid {
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 110px;
+}
+
+.countdown-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(60px, 14vw, 100px);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--navy);
+
+  width: 1.4ch;
+  text-align: center;
+}
+
+.countdown-label {
+  margin-top: 10px;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: var(--rose-gold);
+}
+
+.countdown-separator {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 12vw, 80px);
+  line-height: 1;
+  color: rgba(30, 45, 61, .18);
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.countdown-done {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(32px, 7vw, 52px);
+  color: var(--navy);
+  margin-top: 30px;
+}
