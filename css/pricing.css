@@ -203,6 +203,10 @@
 /* ── Visual mockup area ── */
 .iw-price-visual {
   margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 176px;          /* tallest mockup (web preview) sets the floor */
 }
 
 /* Web invitation mini-preview */
@@ -237,9 +241,11 @@
 .iw-price-web-preview-body {
   background: var(--ivory);
   padding: 14px 12px;
+  height: 136px;               /* matches phone frame (160px) minus bar (~24px) */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 6px;
 }
 .iw-price-web-preview-title-bar {
@@ -519,7 +525,7 @@
 @media (min-width: 900px) {
   .iw-pricing-grid {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;      /* all cards same height */
     justify-content: center;
     gap: 24px;
   }
@@ -528,13 +534,21 @@
     max-width: none;
     flex: 1;
     max-width: 340px;
+    display: flex;
+    flex-direction: column;    /* let CTA anchor to bottom */
   }
 
-  /* Featured card slightly taller feel */
+  /* Push price + CTA to the bottom of every card */
+  .iw-price-features {
+    flex: 1;
+  }
+
+  /* Featured card slightly elevated treatment */
   .iw-price-card--featured {
     padding-top: 52px;
     padding-bottom: 48px;
     margin-top: -8px;
+    margin-bottom: -8px;       /* compensate so neighbours still align */
   }
 }
 

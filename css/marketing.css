@@ -495,6 +495,8 @@ button, input, select, textarea { font: inherit; }
   transition: color .2s ease;
 }
 .iw-nav-links a:hover { color: var(--gold); }
+.iw-nav-active a,
+.iw-nav-active a:hover { color: var(--gold); font-weight: 600; }
 
 .iw-nav-cta {
   padding: 9px 22px !important;
@@ -1814,3 +1816,4 @@ button, input, select, textarea { font: inherit; }
   .iw-link-item { transition: none !important; }
   .iw-demo-layer { transition: none !important; }
 }
+

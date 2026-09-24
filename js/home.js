@@ -81,25 +81,14 @@
 
 
   /* =========================================================
-     NAV — scroll shadow + mobile toggle
+     NAV — mobile menu: close on link click
+     (scroll shadow + toggle wired in js/shared.js)
   ========================================================= */
 
-  const nav        = document.getElementById("iwNav");
-  const navToggle  = document.getElementById("iwNavToggle");
   const mobileMenu = document.getElementById("iwMobileMenu");
+  const navToggle  = document.getElementById("iwNavToggle");
 
-  if (nav) {
-    window.addEventListener("scroll", () => {
-      nav.classList.toggle("scrolled", window.scrollY > 24);
-    }, { passive: true });
-  }
-
-  if (navToggle && mobileMenu) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = !mobileMenu.hidden;
-      mobileMenu.hidden = isOpen;
-      navToggle.setAttribute("aria-expanded", String(!isOpen));
-    });
+  if (mobileMenu && navToggle) {
     mobileMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         mobileMenu.hidden = true;

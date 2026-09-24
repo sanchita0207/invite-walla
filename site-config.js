@@ -19,4 +19,10 @@ const SITE_CONFIG = {
   ───────────────────────────────────────────────────── */
   instagramUsername: "invitewalla",
 
+  /* ── Google Analytics ──────────────────────────────────
+     GA4 Measurement ID.
+     Set to null to disable analytics.
+  ───────────────────────────────────────────────────── */
+  gaMeasurementId: "G-PT88P28T2R",
+
 };
