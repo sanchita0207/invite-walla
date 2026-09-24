@@ -68,7 +68,29 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Aanya & Rohan — Digital Wedding Invitation | InviteWalla",
+    "description": "Explore Aanya & Rohan's sample digital wedding invitation — their story, wedding events, gallery, venue and directions. A sample of what InviteWalla creates.",
+    "url": "https://invitewalla.com/invite/aanya-rohan/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "InviteWalla",
+      "url": "https://invitewalla.com/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://invitewalla.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Invitations", "item": "https://invitewalla.com/invite/" },
+        { "@type": "ListItem", "position": 3, "name": "Aanya & Rohan", "item": "https://invitewalla.com/invite/aanya-rohan/" }
+      ]
+    }
+  }
+  </script>
 </head>
 
 
@@ -102,7 +124,7 @@
       </div>
 
       <div class="opening-date">
-        14 · FEBRUARY · 2025
+        14 · FEBRUARY · 2027
       </div>
 
       <button class="open-button" id="openInvitation">
@@ -118,9 +140,7 @@
        MUSIC
   ========================================================= -->
 
-  <audio id="weddingMusic" loop>
-    <!-- <source src="music/wedding.mp3" type="audio/mpeg"> -->
-  </audio>
+  <audio id="weddingMusic" loop></audio>
 
   <button
     class="music-button"
@@ -156,7 +176,7 @@
       </div>
 
       <div class="hero-date">
-        14 · FEBRUARY · 2025
+        14 · FEBRUARY · 2027
       </div>
 
     </div>
@@ -192,21 +212,13 @@
       <div class="couple-grid">
 
         <div class="person reveal">
-          <img
-            class="person-photo"
-            src="images/bride.jpeg"
-            alt="Aanya"
-          >
+          <img class="person-photo" src="images/bride.svg" alt="Aanya">
           <div class="person-name">Aanya</div>
           <div class="person-role">The Bride</div>
         </div>
 
         <div class="person reveal">
-          <img
-            class="person-photo"
-            src="images/groom.jpeg"
-            alt="Rohan"
-          >
+          <img class="person-photo" src="images/groom.svg" alt="Rohan">
           <div class="person-name">Rohan</div>
           <div class="person-role">The Groom</div>
         </div>
@@ -255,7 +267,7 @@
   ========================================================= -->
 
   <div id="eventSections">
-    <!-- Individual event sections injected by JS from weddingData.events -->
+    <!-- Injected by invite.js from weddingData.events -->
   </div>
 
 
@@ -276,27 +288,7 @@
       </h2>
 
       <div class="gallery-grid">
-
-        <div class="gallery-item large reveal">
-          <img src="images/couple-1.jpeg" alt="Aanya and Rohan">
-        </div>
-
-        <div class="gallery-item reveal">
-          <img src="images/couple-2.jpg" alt="Aanya and Rohan">
-        </div>
-
-        <div class="gallery-item reveal">
-          <img src="images/couple-3.jpg" alt="Aanya and Rohan">
-        </div>
-
-        <div class="gallery-item reveal">
-          <img src="images/couple-4.jpg" alt="Aanya and Rohan">
-        </div>
-
-        <div class="gallery-item reveal">
-          <img src="images/couple-5.jpg" alt="Aanya and Rohan">
-        </div>
-
+        <!-- Injected by invite.js from weddingData.gallery -->
       </div>
 
     </div>
@@ -321,7 +313,7 @@
       </h2>
 
       <div class="countdown-grid reveal" id="countdownGrid">
-        <!-- filled by JS -->
+        <!-- Filled by invite.js -->
       </div>
 
     </div>
@@ -336,7 +328,7 @@
   <footer>
 
     <div class="footer-names">
-      Aanya & Rohan
+      Aanya &amp; Rohan
     </div>
 
     <div class="footer-text">
@@ -361,312 +353,7 @@
 
   <script src="invitation-data.js"></script>
   <script src="/js/analytics.js"></script>
-
-  <script>
-
-    /*
-      =========================================================
-      SCROLL REVEAL — defined first so render() can call it
-      =========================================================
-    */
-
-    var _prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    var revealObserver = new IntersectionObserver(
-      function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    function observeRevealElements() {
-      if (_prefersReduced) {
-        document.querySelectorAll(".reveal").forEach(function(el) { el.classList.add("visible"); });
-        return;
-      }
-      document.querySelectorAll(".reveal:not(.visible)").forEach(function(el) { revealObserver.observe(el); });
-    }
-
-
-    /*
-      =========================================================
-      RENDER FROM DATA
-      =========================================================
-    */
-
-    (function render() {
-
-      const d = weddingData;
-
-      const qs  = (sel)       => document.querySelector(sel);
-      const qsa = (sel)       => document.querySelectorAll(sel);
-      const set = (sel, html) => { const el = qs(sel); if (el) el.innerHTML = html; };
-
-      /* ── Page title & meta ─────────────────── */
-      document.title = `${d.bride.name} & ${d.groom.name} | Wedding`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = `Join ${d.bride.name} and ${d.groom.name} as they begin their journey together.`;
-
-      /* ── Opening screen ────────────────────── */
-      set(".opening-small", d.taglines.opening);
-      const openingNames = document.querySelectorAll("#opening .opening-names");
-      if (openingNames[0]) openingNames[0].textContent = d.bride.displayTitle;
-      if (openingNames[1]) openingNames[1].textContent = d.groom.displayTitle;
-      set(".opening-date", d.weddingDate.display);
-
-      /* ── Hero ──────────────────────────────── */
-      set(".hero-small", d.taglines.hero);
-      const heroNames = qsa(".hero-names");
-      if (heroNames[0]) heroNames[0].textContent = d.bride.name;
-      if (heroNames[1]) heroNames[1].textContent = d.groom.name;
-      set(".hero-date", d.weddingDate.display);
-
-      /* ── Couple section ────────────────────── */
-      set(".section-text.couple-intro", d.taglines.coupleIntro);
-      const persons    = qsa(".person");
-      const coupleData = [d.bride, d.groom];
-      const roles      = ["The Bride", "The Groom"];
-      persons.forEach((el, i) => {
-        const c = coupleData[i];
-        if (!c) return;
-        const img  = el.querySelector(".person-photo");
-        const name = el.querySelector(".person-name");
-        const role = el.querySelector(".person-role");
-        if (img)  { img.src = c.photo; img.alt = c.name; }
-        if (name) name.textContent = c.name;
-        if (role) role.textContent = roles[i];
-      });
-
-      /* ── Story section ─────────────────────── */
-      const storyTitle = document.querySelector(".story .section-title");
-      const storyText  = document.querySelector(".story .section-text");
-      if (storyTitle) storyTitle.textContent = d.taglines.storyTitle;
-      if (storyText)  storyText.innerHTML = d.taglines.storyBody.replace(/\n\n/g, "<br><br>");
-
-      /* ── Events ────────────────────────────── */
-      const eventSections = document.getElementById("eventSections");
-      if (eventSections) {
-        eventSections.innerHTML = d.events.map((ev, i) => {
-          const dark = i % 2 !== 0;
-          return `
-            <section class="event-section${dark ? " event-section--dark" : ""}" aria-label="${ev.title}">
-              <div class="section-inner">
-                <div class="eyebrow reveal">Wedding Celebrations</div>
-                <div class="event-section-icon reveal">${ev.icon}</div>
-                <h2 class="section-title reveal">${ev.title}</h2>
-                <div class="event-section-meta reveal">${ev.date} &nbsp;·&nbsp; ${ev.time}</div>
-                <p class="section-text reveal">${ev.description}</p>
-                <div class="event-section-venue reveal">
-                  <div class="event-section-venue-name">${ev.venue.name}</div>
-                  <div class="event-section-venue-address">${ev.venue.address}</div>
-                  <a class="event-section-directions" href="${ev.venue.mapsUrl}" target="_blank" rel="noopener">
-                    Get Directions
-                  </a>
-                </div>
-              </div>
-            </section>
-          `;
-        }).join("");
-        observeRevealElements();
-      }
-
-      /* ── Gallery ───────────────────────────── */
-      const galleryGrid = document.querySelector(".gallery-grid");
-      if (galleryGrid) {
-        galleryGrid.innerHTML = d.gallery.map(img => `
-          <div class="gallery-item${img.large ? " large" : ""} reveal">
-            <img src="${img.src}" alt="${d.bride.name} and ${d.groom.name}">
-          </div>
-        `).join("");
-      }
-
-      /* ── Footer ────────────────────────────── */
-      set(".footer-names", `${d.bride.name} & ${d.groom.name}`);
-      set(".footer-text",  d.taglines.footerLine);
-
-      /* ── Music ─────────────────────────────── */
-      if (d.music && d.music.src) {
-        const audio = document.getElementById("weddingMusic");
-        if (audio) {
-          audio.innerHTML = `<source src="${d.music.src}" type="${d.music.type}">`;
-        }
-      }
-
-    })();
-
-  </script>
-
-  <script>
-
-    /*
-      =========================================================
-      OPEN INVITATION
-      =========================================================
-    */
-
-    const opening    = document.getElementById("opening");
-    const openButton = document.getElementById("openInvitation");
-
-    openButton.addEventListener("click", () => {
-      opening.classList.add("hidden");
-      document.body.style.overflow = "auto";
-      startMusic();
-    });
-
-
-    /*
-      =========================================================
-      MUSIC
-      =========================================================
-    */
-
-    const music       = document.getElementById("weddingMusic");
-    const musicButton = document.getElementById("musicButton");
-    let musicPlaying  = false;
-
-    function startMusic() {
-      if (!music.src || music.src === window.location.href) return;
-      music.play().then(() => {
-        musicPlaying = true;
-        musicButton.textContent = "♫";
-      }).catch(() => {});
-    }
-
-    musicButton.addEventListener("click", () => {
-      if (!music.src || music.src === window.location.href) return;
-      if (musicPlaying) {
-        music.pause();
-        musicPlaying = false;
-        musicButton.textContent = "♪";
-      } else {
-        music.play();
-        musicPlaying = true;
-        musicButton.textContent = "♫";
-      }
-    });
-
-
-    /*
-      =========================================================
-      SCROLL REVEAL — initial observation run
-      =========================================================
-    */
-
-    observeRevealElements();
-
-
-    /*
-      =========================================================
-      COUNTDOWN
-      =========================================================
-    */
-
-    (function initCountdown() {
-
-      const grid = document.getElementById("countdownGrid");
-      if (!grid) return;
-
-      const weddingDay  = weddingData.weddingDate.iso;
-      const weddingTime = weddingData.weddingDate.countdownTime || "19:00:00";
-      const target      = new Date(`${weddingDay}T${weddingTime}`);
-
-      function pad(n) {
-        return String(Math.max(0, n)).padStart(2, "0");
-      }
-
-      function buildGrid(days, hours, minutes, seconds) {
-        return `
-          <div class="countdown-unit">
-            <span class="countdown-number" id="cd-days">${pad(days)}</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <span class="countdown-separator" aria-hidden="true">:</span>
-          <div class="countdown-unit">
-            <span class="countdown-number" id="cd-hours">${pad(hours)}</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <span class="countdown-separator" aria-hidden="true">:</span>
-          <div class="countdown-unit">
-            <span class="countdown-number" id="cd-mins">${pad(minutes)}</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <span class="countdown-separator" aria-hidden="true">:</span>
-          <div class="countdown-unit">
-            <span class="countdown-number" id="cd-secs">${pad(seconds)}</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
-        `;
-      }
-
-      function tick() {
-        const now  = Date.now();
-        const diff = target - now;
-
-        if (diff <= 0) {
-          grid.innerHTML = `<p class="countdown-done">Today is the day! 💍</p>`;
-          return;
-        }
-
-        const totalSecs = Math.floor(diff / 1000);
-        const secs      = totalSecs % 60;
-        const totalMins = Math.floor(totalSecs / 60);
-        const mins      = totalMins % 60;
-        const totalHrs  = Math.floor(totalMins / 60);
-        const hrs       = totalHrs % 24;
-        const days      = Math.floor(totalHrs / 24);
-
-        if (!document.getElementById("cd-days")) {
-          grid.innerHTML = buildGrid(days, hrs, mins, secs);
-          return;
-        }
-
-        const cdDays  = document.getElementById("cd-days");
-        const cdHours = document.getElementById("cd-hours");
-        const cdMins  = document.getElementById("cd-mins");
-        const cdSecs  = document.getElementById("cd-secs");
-
-        if (cdDays.textContent  !== pad(days))  cdDays.textContent  = pad(days);
-        if (cdHours.textContent !== pad(hrs))   cdHours.textContent = pad(hrs);
-        if (cdMins.textContent  !== pad(mins))  cdMins.textContent  = pad(mins);
-        if (cdSecs.textContent  !== pad(secs))  cdSecs.textContent  = pad(secs);
-      }
-
-      tick();
-      setInterval(tick, 1000);
-
-    })();
-
-
-    /*
-      =========================================================
-      PREVENT SCROLL WHILE OPENING SCREEN IS ACTIVE
-      =========================================================
-    */
-
-    document.body.style.overflow = "hidden";
-
-  </script>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Aanya & Rohan — Digital Wedding Invitation | InviteWalla",
-    "description": "Explore Aanya & Rohan's sample digital wedding invitation — their story, wedding events, gallery, venue and directions. A sample of what InviteWalla creates.",
-    "url": "https://invitewalla.com/invite/aanya-rohan/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "InviteWalla",
-      "url": "https://invitewalla.com/"
-    }
-  }
-  </script>
+  <script src="/invite/_template/invite.js"></script>
 
 </body>
 </html>
