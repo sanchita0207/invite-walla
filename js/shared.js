@@ -43,7 +43,7 @@
       { href: '/#occasions',    label: 'Occasions'   },
       { href: '/#how-it-works', label: 'How it works'},
       { href: '/#pricing',      label: 'Invitations' },
-      { href: '/invite/aanya-rohan/', label: 'Explore', ariaLabel: 'See a sample digital wedding invitation by InviteWalla' },
+      { href: '/invite/wedding/aanya-rohan/', label: 'Explore', ariaLabel: 'See a sample digital wedding invitation by InviteWalla' },
       { href: '/faq/',          label: 'FAQ'         },
     ];
 
@@ -109,7 +109,7 @@
       '          <li><a href="/#how-it-works">How it works</a></li>',
       '          <li><a href="/#occasions">Occasions</a></li>',
       '          <li><a href="/#pricing">Invitations &amp; Pricing</a></li>',
-      '          <li><a href="/invite/aanya-rohan/">See an example</a></li>',
+      '          <li><a href="/invite/wedding/aanya-rohan/">See an example</a></li>',
       '          <li><a href="/faq/">FAQ</a></li>',
       '          <li><a href="/#enquire">Get started</a></li>',
       '        </ul>',
