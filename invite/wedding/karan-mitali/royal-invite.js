@@ -172,22 +172,6 @@
         width:        200,
         mobileWidth:  100
       },
-    /* ── Photo frame: sized relative to the actual rendered portrait.
-       We read the first portrait frame's width after layout and apply
-       that + 24px (inset compensation) to all frame sprites.          */
-    var firstPortrait = qs(".mkr-portrait-frame");
-    if (firstPortrait) {
-      var portraitW = firstPortrait.offsetWidth || (isMobile ? 194 : 260);
-      var frameW    = portraitW + 24;
-      qsa(".mkr-portrait-frame-sprite").forEach(function (el) {
-        RoyalSprite.applyToElement(el, "photo-frame", frameW);
-        /* Ensure the sprite fills the inset area regardless of JS timing */
-        el.style.position = "absolute";
-        el.style.inset    = "-12px";
-        el.style.width    = "calc(100% + 24px)";
-        el.style.height   = "auto";
-      });
-    }
       {
         sprite:      "floral-branch-left",
         className:   "mkr-portrait-floral-tl",
