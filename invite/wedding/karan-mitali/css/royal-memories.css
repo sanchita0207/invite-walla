@@ -1,0 +1,138 @@
+/* =========================================================
+   ROYAL MEMORIES / GALLERY SECTION
+========================================================= */
+
+.mkr-memories {
+  position: relative;
+  padding: 110px 24px 120px;
+  background: var(--mkr-parchment);
+  overflow: hidden;
+}
+
+/* ── Decorative assets — sprite divs ────────────────────── */
+
+.mkr-memories-floral-tl {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  /* width/height set by JS */
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mkr-memories-floral-br {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  /* width/height set by JS */
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+  transform: scale(-1);
+}
+
+.mkr-memories-chhatri-left {
+  position: absolute;
+  left: 2%;
+  top: 12%;
+  /* width/height set by JS */
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mkr-memories-chhatri-right {
+  position: absolute;
+  right: 2%;
+  top: 12%;
+  /* width/height set by JS */
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+  transform: scaleX(-1);
+}
+
+/* ── Section header ─────────────────────────────────────── */
+.mkr-memories .mkr-section-inner {
+  margin-bottom: 40px;
+}
+
+/* ── Gallery grid ───────────────────────────────────────── */
+.mkr-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Standard item */
+.mkr-gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+
+  background: linear-gradient(135deg, #e8d6c0, #c7a58c);
+}
+
+/* Large item spans full width */
+.mkr-gallery-item--large {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+/* Slightly different rotations for paper-stack editorial feel */
+.mkr-gallery-item:nth-child(2) { transform: rotate(0.5deg); }
+.mkr-gallery-item:nth-child(3) { transform: rotate(-0.5deg); }
+.mkr-gallery-item:nth-child(4) { transform: rotate(0.3deg); }
+.mkr-gallery-item:nth-child(5) { transform: rotate(-0.3deg); }
+
+.mkr-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.mkr-gallery-item--large img {
+  object-position: center center;
+}
+
+.mkr-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Gold border */
+.mkr-gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(185, 149, 82, 0.28);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Subtle inner shadow */
+.mkr-gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 20px rgba(100, 31, 42, 0.08);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Bottom ornament — sprite div ───────────────────────── */
+.mkr-memories-ornament {
+  /* width/height/background set by RoyalSprite JS */
+  margin: 52px auto 0;
+  opacity: 0.55;
+  position: relative;
+  z-index: 2;
+}

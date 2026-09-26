@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "image": "royal-wedding-atlas-final.png",
+  "size": {
+    "width": 2560,
+    "height": 2560
+  },
+  "cellSize": 512,
+  "sprites": {
+    "peacock-left": {
+      "x": 24,
+      "y": 72,
+      "width": 464,
+      "height": 367,
+      "cellX": 0,
+      "cellY": 0
+    },
+    "peacock-right": {
+      "x": 536,
+      "y": 37,
+      "width": 464,
+      "height": 438,
+      "cellX": 1,
+      "cellY": 0
+    },
+    "lanterns": {
+      "x": 1048,
+      "y": 52,
+      "width": 464,
+      "height": 408,
+      "cellX": 2,
+      "cellY": 0
+    },
+    "floral-top-left": {
+      "x": 1560,
+      "y": 28,
+      "width": 464,
+      "height": 455,
+      "cellX": 3,
+      "cellY": 0
+    },
+    "floral-top-right": {
+      "x": 2072,
+      "y": 44,
+      "width": 464,
+      "height": 423,
+      "cellX": 4,
+      "cellY": 0
+    },
+    "floral-left-cascade": {
+      "x": 81,
+      "y": 536,
+      "width": 349,
+      "height": 464,
+      "cellX": 0,
+      "cellY": 1
+    },
+    "floral-right-cascade": {
+      "x": 536,
+      "y": 553,
+      "width": 464,
+      "height": 430,
+      "cellX": 1,
+      "cellY": 1
+    },
+    "floral-branch-left": {
+      "x": 1048,
+      "y": 536,
+      "width": 464,
+      "height": 464,
+      "cellX": 2,
+      "cellY": 1
+    },
+    "floral-branch-right": {
+      "x": 1606,
+      "y": 536,
+      "width": 371,
+      "height": 464,
+      "cellX": 3,
+      "cellY": 1
+    },
+    "chhatri-left": {
+      "x": 2090,
+      "y": 536,
+      "width": 427,
+      "height": 464,
+      "cellX": 4,
+      "cellY": 1
+    },
+    "chhatri-right": {
+      "x": 42,
+      "y": 1048,
+      "width": 427,
+      "height": 464,
+      "cellX": 0,
+      "cellY": 2
+    },
+    "arch-frame": {
+      "x": 536,
+      "y": 1065,
+      "width": 464,
+      "height": 430,
+      "cellX": 1,
+      "cellY": 2
+    },
+    "column-floral": {
+      "x": 1094,
+      "y": 1048,
+      "width": 371,
+      "height": 464,
+      "cellX": 2,
+      "cellY": 2
+    },
+    "palace-lake": {
+      "x": 1560,
+      "y": 1204,
+      "width": 464,
+      "height": 152,
+      "cellX": 3,
+      "cellY": 2
+    },
+    "palace-silhouette": {
+      "x": 2072,
+      "y": 1175,
+      "width": 464,
+      "height": 210,
+      "cellX": 4,
+      "cellY": 2
+    },
+    "palace-balcony-right": {
+      "x": 24,
+      "y": 1658,
+      "width": 464,
+      "height": 267,
+      "cellX": 0,
+      "cellY": 3
+    },
+    "floral-ornament": {
+      "x": 536,
+      "y": 1596,
+      "width": 464,
+      "height": 392,
+      "cellX": 1,
+      "cellY": 3
+    },
+    "photo-frame": {
+      "x": 1048,
+      "y": 1665,
+      "width": 464,
+      "height": 254,
+      "cellX": 2,
+      "cellY": 3
+    },
+    "ornament-center": {
+      "x": 1560,
+      "y": 1692,
+      "width": 464,
+      "height": 200,
+      "cellX": 3,
+      "cellY": 3
+    },
+    "ornament-small": {
+      "x": 2072,
+      "y": 1627,
+      "width": 464,
+      "height": 329,
+      "cellX": 4,
+      "cellY": 3
+    },
+    "hanging-tassel": {
+      "x": 24,
+      "y": 2095,
+      "width": 464,
+      "height": 417,
+      "cellX": 0,
+      "cellY": 4
+    },
+    "paper-texture": {
+      "x": 536,
+      "y": 2208,
+      "width": 464,
+      "height": 191,
+      "cellX": 1,
+      "cellY": 4
+    }
+  },
+  "usage": {
+    "description": "Transparent decorative sprite atlas for the Mitali & Karan royal wedding invitation.",
+    "rule": "Use CSS background-position/background-size or canvas cropping; never display the atlas directly.",
+    "mobile": "Use the mobile placement values from the design prompt; decorative sprites may be partially cropped at viewport edges.",
+    "doNotUse": "Do not use an asset if its source artwork appears visibly contaminated or has a hard rectangular edge."
+  },
+  "alphaCleanup": {
+    "threshold": 110,
+    "note": "Low-alpha background/edge halos are transparent; sprites are never rendered directly as a full image."
+  },
+  "cleanup": {
+    "lowAlphaThreshold": 90,
+    "bottomCellTextCleanup": true
+  }
+}

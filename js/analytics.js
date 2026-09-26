@@ -95,6 +95,8 @@
     "enquire",
     "occasions",
     "story",
+    "faq-snippet",
+    "compare",
   ];
 
   if ("IntersectionObserver" in window) {
@@ -148,6 +150,26 @@
         location: page,
       });
     }, /* capture: */ true); /* capture phase so it fires before home.js's handler */
+  }
+
+
+  /* =========================================================
+     5. FAQ SNIPPET EXPAND (homepage <details> accordion)
+     ─────────────────────────────────────────────────────────
+     Fires when a user expands a question on the homepage.
+  ========================================================= */
+
+  var trustFaq = document.querySelector(".iw-trust-faq");
+  if (trustFaq) {
+    trustFaq.addEventListener("toggle", function (e) {
+      if (e.target && e.target.open) {
+        var q = e.target.querySelector(".iw-trust-q");
+        track("faq_snippet_expand", {
+          question: q ? q.textContent.trim().slice(0, 80) : "",
+          location: page,
+        });
+      }
+    }, true);
   }
 
 })();

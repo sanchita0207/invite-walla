@@ -1,0 +1,115 @@
+/* =========================================================
+   ROYAL FLOATING NAV
+========================================================= */
+
+.mkr-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 400;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Toggle button — always visible */
+.mkr-nav-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(185, 149, 82, 0.5);
+  background: rgba(255, 250, 240, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.mkr-nav-toggle:hover {
+  background: rgba(255, 250, 240, 0.98);
+}
+
+.mkr-nav-toggle:focus-visible {
+  outline: 2px solid var(--mkr-gold);
+  outline-offset: 3px;
+}
+
+.mkr-nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--mkr-burgundy);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Open state */
+.mkr-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.mkr-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.mkr-nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Menu panel */
+.mkr-nav-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  background: rgba(255, 250, 240, 0.96);
+  border: 1px solid rgba(185, 149, 82, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: 16px 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  box-shadow: 0 8px 32px rgba(100, 31, 42, 0.1);
+}
+
+.mkr-nav-menu[hidden] {
+  display: none;
+}
+
+.mkr-nav-menu a {
+  display: block;
+  padding: 10px 24px;
+
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--mkr-burgundy);
+
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mkr-nav-menu a:hover {
+  color: var(--mkr-gold);
+  background: rgba(185, 149, 82, 0.07);
+}
+
+.mkr-nav-menu a:focus-visible {
+  outline: 2px solid var(--mkr-gold);
+  outline-offset: -2px;
+}

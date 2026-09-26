@@ -1,0 +1,161 @@
+/* =========================================================
+   ROYAL COUPLE SECTION
+========================================================= */
+
+.mkr-couple {
+  position: relative;
+  padding: 110px 24px 130px;
+  background: var(--mkr-ivory);
+  overflow: hidden;
+}
+
+/* ── Decorative assets — sprite divs ────────────────────── */
+
+.mkr-couple-peacock {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-60%);
+  /* width/height set by JS */
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mkr-couple-floral-left {
+  position: absolute;
+  left: -20px;
+  bottom: 0;
+  /* width/height set by JS */
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mkr-couple-floral-right {
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  /* width/height set by JS */
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+  transform: scaleX(-1);
+}
+
+/* ── Couple grid ────────────────────────────────────────── */
+
+.mkr-couple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Centre ornament column (hidden on mobile) */
+.mkr-couple-centre {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.mkr-couple-centre-ornament {
+  /* width/height set by RoyalSprite JS */
+  opacity: 0.65;
+  flex-shrink: 0;
+}
+
+.mkr-couple-centre-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--mkr-gold) 30%,
+    var(--mkr-gold) 70%,
+    transparent
+  );
+  opacity: 0.4;
+  min-height: 80px;
+}
+
+/* ── Person card ────────────────────────────────────────── */
+
+.mkr-person {
+  text-align: center;
+}
+
+/* Portrait frame */
+.mkr-portrait-frame {
+  position: relative;
+  width: clamp(190px, 40vw, 260px);
+  margin: 0 auto 28px;
+}
+
+.mkr-portrait-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+
+  /* Arch-top portrait */
+  border-radius: 140px 140px 12px 12px;
+
+  border: 1px solid rgba(185, 149, 82, 0.45);
+  padding: 6px;
+  background: var(--mkr-soft-cream);
+
+  box-shadow:
+    0 8px 32px rgba(100, 31, 42, 0.12),
+    0 2px 8px rgba(100, 31, 42, 0.08);
+}
+
+/* Decorative frame sprite sits over the photo */
+.mkr-portrait-frame-sprite {
+  position: absolute;
+  inset: -12px;
+  /* width/height overridden by JS to match photo frame proportions */
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+/* Floral branch corner decor — sprite divs */
+.mkr-portrait-floral-tl,
+.mkr-portrait-floral-tr {
+  position: absolute;
+  /* width/height set by JS */
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.mkr-portrait-floral-tl {
+  top: -22px;
+  left: -22px;
+}
+
+.mkr-portrait-floral-tr {
+  top: -22px;
+  right: -22px;
+  transform: scaleX(-1);
+}
+
+.mkr-person-name {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(40px, 9vw, 62px);
+  color: var(--mkr-burgundy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.mkr-person-role {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mkr-gold);
+}

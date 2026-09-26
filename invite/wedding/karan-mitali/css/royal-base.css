@@ -1,0 +1,223 @@
+/* =========================================================
+   ROYAL BASE — Mitali & Karan Royal Edition
+   All selectors are scoped under .mkr- prefix to prevent
+   any style leakage to or from existing pages.
+========================================================= */
+
+/* ── Reset (scoped) ─────────────────────────────────────── */
+.mkr-body * {
+  box-sizing: border-box;
+}
+
+.mkr-body {
+  margin: 0;
+  padding: 0;
+  background: #f5efe4;
+  color: #2a1510;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mkr-body img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Sprite divs — ensure they don't collapse and don't overflow */
+.mkr-body [data-sprite] {
+  display: block;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+}
+
+.mkr-body button,
+.mkr-body a {
+  font: inherit;
+}
+
+.mkr-body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ── Design tokens ──────────────────────────────────────── */
+:root {
+  --mkr-burgundy:       #641f2a;
+  --mkr-deep-burgundy:  #3d1119;
+  --mkr-maroon:         #7c1f2e;
+  --mkr-gold:           #b99552;
+  --mkr-gold-light:     #d4b06a;
+  --mkr-gold-pale:      #f1d28c;
+  --mkr-cream:          #f5efe4;
+  --mkr-soft-cream:     #fffaf3;
+  --mkr-ivory:          #fdf7ec;
+  --mkr-parchment:      #f0e6d3;
+  --mkr-text:           #2a1510;
+  --mkr-muted:          #7a5c52;
+  --mkr-sage:           #8a9e7a;
+  --mkr-dusty-pink:     #d4a0a0;
+}
+
+
+/* ── Shared section structure ───────────────────────────── */
+.mkr-section-inner {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.mkr-eyebrow {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--mkr-gold);
+  margin-bottom: 20px;
+}
+
+.mkr-eyebrow--light {
+  color: var(--mkr-gold-pale);
+  opacity: 0.9;
+}
+
+.mkr-section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(40px, 9vw, 72px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--mkr-burgundy);
+}
+
+.mkr-section-title--light {
+  color: var(--mkr-gold-pale);
+}
+
+.mkr-section-text {
+  max-width: 640px;
+  margin: 24px auto 0;
+  color: var(--mkr-muted);
+  line-height: 1.95;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Ornament divider */
+.mkr-ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 36px auto;
+  max-width: 320px;
+}
+
+.mkr-ornament-line {
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--mkr-gold), transparent);
+  opacity: 0.6;
+}
+
+.mkr-ornament-img {
+  /* width/height set by RoyalSprite JS */
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+/* Sprite divs used as ornament images */
+.mkr-ornament-img--sprite {
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+
+/* ── Texture overlay helper ─────────────────────────────── */
+.mkr-section-texture {
+  position: absolute;
+  inset: 0;
+  background-size: 400px;
+  background-repeat: repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ── Scroll reveal ──────────────────────────────────────── */
+.mkr-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mkr-reveal.mkr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mkr-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  /* Disable all royal animations */
+  .mkr-hero-lanterns,
+  .mkr-countdown-lanterns,
+  .mkr-footer-lanterns,
+  .mkr-opening-lanterns,
+  .mkr-hero-peacock,
+  .mkr-footer-heart svg {
+    animation: none !important;
+  }
+}
+
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes mkrFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes mkrLanternSway {
+  0%, 100% { transform: rotate(-2.5deg) translateX(0); }
+  50%       { transform: rotate(2.5deg) translateX(4px); }
+}
+
+@keyframes mkrFloatPeacock {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-12px) rotate(0.5deg); }
+}
+
+@keyframes mkrHeroReveal {
+  from { opacity: 0; transform: scale(1.04); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+@keyframes mkrPulseGold {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 1;   }
+}
+
+
+/* ── Screen reader only ─────────────────────────────────── */
+.mkr-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

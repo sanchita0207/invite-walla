@@ -1,0 +1,235 @@
+/* =========================================================
+   ROYAL OPENING SCREEN
+========================================================= */
+
+.mkr-opening {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Deep burgundy radial — palace velvet feel */
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      #8a2535 0%,
+      var(--mkr-burgundy) 42%,
+      var(--mkr-deep-burgundy) 100%
+    );
+
+  color: white;
+  overflow: hidden;
+
+  transition:
+    opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mkr-opening.mkr-opening--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Paper texture */
+.mkr-opening-texture {
+  position: absolute;
+  inset: 0;
+  background-size: 400px;
+  background-repeat: repeat;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+/* Floral corners — sprite divs */
+.mkr-opening-floral {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+  /* width/height set by RoyalSprite JS */
+}
+
+.mkr-opening-floral--tl {
+  top: -20px;
+  left: -20px;
+}
+
+.mkr-opening-floral--tr {
+  top: -20px;
+  right: -20px;
+  transform: scaleX(-1);
+}
+
+.mkr-opening-floral--bl {
+  bottom: -10px;
+  left: -10px;
+  transform: scaleY(-1);
+  opacity: 0.45;
+}
+
+.mkr-opening-floral--br {
+  bottom: -10px;
+  right: -10px;
+  transform: scale(-1);
+  opacity: 0.45;
+}
+
+/* Lanterns — sprite div */
+.mkr-opening-lanterns {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* margin-left centers without overriding transform for the sway animation.
+     Desktop width = 280px → offset ≈ -140px */
+  margin-left: -140px;
+  /* width/height set by RoyalSprite JS */
+  opacity: 0.55;
+  pointer-events: none;
+  transform-origin: top center;
+  animation: mkrLanternSway 6s ease-in-out infinite;
+}
+
+/* Content */
+.mkr-opening-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 32px;
+  animation: mkrFadeUp 1.6s ease both;
+  max-width: min(480px, 90vw);
+}
+
+.mkr-opening-ornament {
+  /* width/height/background set by RoyalSprite JS */
+  margin: 0 auto 24px;
+  opacity: 0.75;
+}
+
+.mkr-opening-eyebrow {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 28px;
+}
+
+.mkr-opening-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.mkr-opening-name {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(64px, 18vw, 110px);
+  line-height: 0.88;
+  color: var(--mkr-gold-pale);
+  display: block;
+}
+
+.mkr-opening-amp {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  opacity: 0.65;
+  margin: 10px 0;
+  display: block;
+}
+
+.mkr-opening-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  letter-spacing: 4px;
+  margin-top: 28px;
+  opacity: 0.8;
+}
+
+.mkr-opening-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(241, 210, 140, 0.4);
+  margin: 28px auto;
+}
+
+.mkr-open-btn {
+  display: inline-block;
+  padding: 14px 36px;
+
+  border: 1px solid rgba(241, 210, 140, 0.55);
+  border-radius: 100px;
+
+  background: transparent;
+  color: rgba(255,255,255,0.9);
+
+  cursor: pointer;
+
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.mkr-open-btn:hover,
+.mkr-open-btn:focus-visible {
+  background: var(--mkr-gold-pale);
+  border-color: var(--mkr-gold-pale);
+  color: var(--mkr-deep-burgundy);
+}
+
+.mkr-open-btn:focus-visible {
+  outline: 2px solid var(--mkr-gold-pale);
+  outline-offset: 4px;
+}
+
+
+/* ── Music button ───────────────────────────────────────── */
+.mkr-music-btn {
+  position: fixed;
+  right: 18px;
+  top: 18px;
+  z-index: 500;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(185, 149, 82, 0.6);
+  background: rgba(255, 250, 240, 0.92);
+  color: var(--mkr-burgundy);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  line-height: 1;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.mkr-music-btn:hover {
+  background: #fff;
+  border-color: var(--mkr-gold);
+}
+
+.mkr-music-btn:focus-visible {
+  outline: 2px solid var(--mkr-gold);
+  outline-offset: 3px;
+}
